@@ -106,7 +106,7 @@
 
 @media (max-width: 768px) { /* Keeping media query breakpoint consistent */
     .header {
-        padding: 1rem 3rem; /* Adjusted padding for smaller screens */
+        padding: 0 2rem; /* Adjusted padding for smaller screens */
         justify-content: space-between;
     }
 

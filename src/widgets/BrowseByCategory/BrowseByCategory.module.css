@@ -103,9 +103,8 @@
     }
 
     .category-item {
-        padding: 1rem;
         min-width: 120px;
-        height: 100px;
+        /* height: 100px; */
         box-sizing: border-box;
     }
 
