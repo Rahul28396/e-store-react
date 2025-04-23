@@ -1,0 +1,13 @@
+.productsSection {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 10rem;
+
+    @media (max-width: 1024px) {
+        padding: 1rem 5rem;
+    }
+
+    @media (max-width: 768px) {
+        padding: 1rem 2rem;
+    }
+}

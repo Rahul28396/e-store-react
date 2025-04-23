@@ -1,0 +1,32 @@
+.searchInputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 100%;
+    min-width: 300px;
+}
+
+.searchInputContainer input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 4px 8px;
+    font-size: clamp(14px, 16px, 18px);
+    background-color: #f9f9f9;
+}
+
+.searchInputContainer .searchIcon {
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: rgb(36, 34, 34);
+    align-self: center;
+}
+
+.searchInputContainer {
+    gap: 10px;
+    flex-wrap: wrap;
+}

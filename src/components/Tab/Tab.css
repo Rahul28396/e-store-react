@@ -1,0 +1,59 @@
+/* Tab.css */
+
+.tab-container {
+    display: flex;
+    margin-bottom: 16px;
+    flex-direction: column;
+}
+
+.tab-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.tabpanel {
+    padding: 16px;
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+.tab-button {
+    padding: 16px;
+    margin: 0;
+    border: none;
+    background-color: inherit;
+    color: #3333337c;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.tab-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.tab-button.active {
+    color: black;
+    font-weight: bold;
+}
+
+.tab-button.active::after {
+    width: 100%;
+    left: 50%;
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+    transition: background-color 0.3s ease;
+}
