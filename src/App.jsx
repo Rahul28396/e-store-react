@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='app'>
        <Header />
-       <Outlet />
+       <Outlet data-testid="outlet"/>
     </div>
   )
 }
