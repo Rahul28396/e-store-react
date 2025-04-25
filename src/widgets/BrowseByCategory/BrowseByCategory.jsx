@@ -7,14 +7,17 @@ import { ImHeadphones } from "react-icons/im";
 import { IoGameControllerSharp } from "react-icons/io5";
 import styles from "./BrowseByCategory.module.css";
 import PanelWithHeader from "../PanelWithHeader/PanelWithHeader";
+import Scrollbar from "../../components/Scrollbar/Scrollbar";
 
 const BrowseByCategory = () => {
   return (
-    <PanelWithHeader 
-      title="Browse By Category" 
-      onClickViewAll={() => { console.log("View All Clicked"); }}
+    <PanelWithHeader
+      title="Browse By Category"
+      onClickViewAll={() => {
+        console.log("View All Clicked");
+      }}
     >
-      <div className={styles["category-list"]}>
+      <Scrollbar direction="horizontal">
         <div className={styles["category-item"]}>
           <span>
             <CiMobile3 size={30} />
@@ -51,7 +54,7 @@ const BrowseByCategory = () => {
           </span>
           <h3 className={styles.title}>Games</h3>
         </div>
-      </div>
+      </Scrollbar>
     </PanelWithHeader>
   );
 };

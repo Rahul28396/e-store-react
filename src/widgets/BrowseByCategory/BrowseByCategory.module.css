@@ -41,17 +41,6 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.category-list {
-    display: flex;
-    gap: 1rem;
-    overflow-x: scroll;
-    justify-content: space-between;
-    padding: 1rem 0;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    max-width: fit-content;
-}
-
 .category-item {
     display: flex;
     flex-direction: column;
