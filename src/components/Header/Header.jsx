@@ -19,6 +19,9 @@ const Header = () => {
     <>
       <header className={styles.header}>
         <div className={styles.logo}>
+          <div className={styles.hamburgerMenu} onClick={togglePopup}>
+            <RxHamburgerMenu size={30} />
+          </div>
           <h1 className={styles.companyName}>E-Store</h1>
         </div>
         <div className={styles.searchContainer}>
@@ -26,21 +29,6 @@ const Header = () => {
         </div>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
-            <li className={styles.navItem}>
-              <Link to={"/"} className={styles.navLink}>
-                Home
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link to={"/"} className={styles.navLink}>
-                Categories
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link to={"/"} className={styles.navLink}>
-                Contact
-              </Link>
-            </li>
             <li className={styles.navItem}>
               <Link to={"/"} className={styles.navIcon + " " + styles.navLink}>
                 <MdFavoriteBorder size={20} />
@@ -57,13 +45,23 @@ const Header = () => {
               </Link>
             </li>
           </ul>
+
+          <ul className={styles.mobileNavList}>
+            <li className={styles.navItem}>
+              <Link to={"/"} className={styles.navIcon + " " + styles.navLink}>
+                <IoCartOutline size={20} />
+              </Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link to={"/"} className={styles.navIcon + " " + styles.navLink}>
+                <CiUser size={20} />
+              </Link>
+            </li>
+          </ul>
         </nav>
-        <div className={styles.hamburgerMenu} onClick={togglePopup}>
-          <RxHamburgerMenu size={20} />
-        </div>
       </header>
 
-      <Sidebar isOpen={isPopupOpen} onClose={togglePopup} position="right">
+      <Sidebar isOpen={isPopupOpen} onClose={togglePopup} position="left">
         <ul className={styles.popupNavList}>
           <li className={styles.popupNavItem}>
             <Link to={"/"} className={styles.popupNavLink}>

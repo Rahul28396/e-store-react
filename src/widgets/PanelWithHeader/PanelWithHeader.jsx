@@ -14,7 +14,7 @@ const PanelWithHeader = ({ title, onClickViewAll, children }) => {
         </div>
       </div>
 
-      <div>{children}</div>
+      <div style={{ display: 'flex', justifyContent: 'center'}}>{children}</div>
     </section>
   );
 };

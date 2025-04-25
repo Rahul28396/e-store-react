@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 /* eslint-disable no-undef */
 import { render, screen, fireEvent } from "@testing-library/react";
 import Banner from "./Banner";

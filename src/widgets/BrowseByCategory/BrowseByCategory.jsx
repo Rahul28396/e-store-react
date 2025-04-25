@@ -10,7 +10,10 @@ import PanelWithHeader from "../PanelWithHeader/PanelWithHeader";
 
 const BrowseByCategory = () => {
   return (
-    <PanelWithHeader title="Browse By Category" onClickViewAll={() => { console.log("View All Clicked"); }}>
+    <PanelWithHeader 
+      title="Browse By Category" 
+      onClickViewAll={() => { console.log("View All Clicked"); }}
+    >
       <div className={styles["category-list"]}>
         <div className={styles["category-item"]}>
           <span>

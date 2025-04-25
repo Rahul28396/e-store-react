@@ -83,7 +83,7 @@ const Footer = () => {
             <FaInstagram /> Instagram
           </a>
         </div>
-        <div className={styles.footerContent}>
+        <div data-testid="rights" className={styles.footerContent}>
           <p>&copy; {new Date().getFullYear()} E-Store. All rights reserved.</p>
         </div>
       </section>

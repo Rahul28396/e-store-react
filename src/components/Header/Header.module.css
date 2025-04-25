@@ -6,14 +6,23 @@
     color: rgb(36, 34, 34);
     border-bottom: #ffffffe7 0.1rem solid; /* Relative unit for border */
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Relative units for shadow */
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     position: sticky;
     top: 0; /* Make it stick to the top */
     z-index: 1000; /* Ensure it stays above other elements */
     background-color: #ffffff
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Relative unit for gap */
+    text-decoration: none;
+    color: rgb(36, 34, 34);
+}
+
 .companyName{
+    margin: 0px;
     font-size: larger;
 }
 
@@ -104,9 +113,13 @@
     transform: rotate(-20deg);
 }
 
+.mobileNavList{
+    display: none;
+}
+
 @media (max-width: 768px) { /* Keeping media query breakpoint consistent */
     .header {
-        padding: 0 2rem; /* Adjusted padding for smaller screens */
+        padding: 1rem; /* Adjusted padding for smaller screens */
         justify-content: space-between;
     }
 
@@ -115,13 +128,55 @@
     } 
 
     .hamburgerMenu {
-        display: block;
+        display: contents;
         color: #000000;
     }
+
+    .mobileNavList {
+        display: flex;
+        gap: 2rem; /* Relative unit for gap */
+        list-style: none;
+        text-decoration: none;
+        color: rgb(36, 34, 34);
+        font-weight: 500;
+        padding: 0.5rem 1rem; /* Relative units for padding */
+        align-items: center;
+        margin: 0;
+    }
+
 }
 
 @media (max-width: 1000px) {
     .searchContainer {
         display: none;
     }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 1rem; /* Adjusted padding for smaller screens */
+        justify-content: space-between;
+    }
+
+    .navList {
+        display: none;
+    } 
+
+    .hamburgerMenu {
+        display: contents;
+        color: #000000;
+    }
+
+    .mobileNavList {
+        display: flex;
+        gap: 2rem; /* Relative unit for gap */
+        list-style: none;
+        text-decoration: none;
+        color: rgb(36, 34, 34);
+        font-weight: 500;
+        padding: 0.5rem 1rem; /* Relative units for padding */
+        align-items: center;
+        margin: 0;
+    }
+    
 }
