@@ -8,12 +8,12 @@
 }
 
 [data-theme="dark"] {
-  --bg-color: #111111d2;
+  --bg-color: #0b1a33;
   --text-color: #ffffff;
   --primary-color: #1e90ff;
   --hover-color: #222222;
   --active-color: #333333;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.64);
 }
 
 body {

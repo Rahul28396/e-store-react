@@ -31,14 +31,9 @@
 
 .footerLinks {
     display: flex;
-    justify-content: space-between;
     width: 40%;
-
-    @media screen and (max-width: 1000px) {
-        width: 100%;
-        justify-content: space-around;
-        
-    }
+    flex-wrap: wrap;
+    gap: 4rem;
 }
 
 .footerLink {
@@ -102,7 +97,7 @@
 
     .footerLinks {
         align-items: center;
-        justify-content: space-between;
+        width: 100%;
     }
 }
 
