@@ -1,15 +1,25 @@
-import './App.css'
-import Header from './components/Header/Header'
-import { Outlet } from 'react-router'
+import "./App.css";
+import Header from "./components/Header/Header";
+import { Outlet } from "react-router";
+import ThemeProvider, { useTheme } from "./context/ThemeContext";
 
-function App() {
+function AppContent() {
+  const { theme } = useTheme();
 
   return (
-    <div className='app'>
-       <Header />
-       <Outlet data-testid="outlet"/>
+    <div className={`${theme}`}>
+      <Header />
+      <Outlet data-testid="outlet" />
     </div>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
+}
+
+export default App;

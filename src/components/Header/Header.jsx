@@ -7,6 +7,7 @@ import SearchInput from "../SearchInput/SearchInput";
 import { Link } from "react-router";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Sidebar from "../Sidebar/Sidebar";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -44,6 +45,9 @@ const Header = () => {
                 <CiUser size={20} />
               </Link>
             </li>
+            <li className={styles.navItem}>
+              <ThemeToggle />
+            </li>
           </ul>
 
           <ul className={styles.mobileNavList}>
@@ -56,6 +60,9 @@ const Header = () => {
               <Link to={"/"} className={styles.navIcon + " " + styles.navLink}>
                 <CiUser size={20} />
               </Link>
+            </li>
+            <li className={styles.navItem}>
+              <ThemeToggle />
             </li>
           </ul>
         </nav>

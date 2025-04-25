@@ -23,8 +23,8 @@
     padding: 16px;
     margin: 0;
     border: none;
-    background-color: inherit;
-    color: #3333337c;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     cursor: pointer;
     font-size: 14px;
     position: relative;
@@ -38,13 +38,14 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: #333;
+    background-color: var(--bg-color);
     transition: width 0.3s ease, left 0.3s ease;
     transform: translateX(-50%);
 }
 
 .tab-button.active {
-    color: black;
+    color: var(--bg-color);
+    background-color: var(--text-color);
     font-weight: bold;
 }
 

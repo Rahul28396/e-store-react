@@ -3,14 +3,12 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 0 2rem; /* Relative units for padding */
-    color: rgb(36, 34, 34);
-    border-bottom: #ffffffe7 0.1rem solid; /* Relative unit for border */
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Relative units for shadow */
-    /* flex-wrap: wrap; */
     position: sticky;
     top: 0; /* Make it stick to the top */
     z-index: 1000; /* Ensure it stays above other elements */
-    background-color: #ffffff
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .logo{
@@ -18,12 +16,12 @@
     align-items: center;
     gap: 1rem; /* Relative unit for gap */
     text-decoration: none;
-    color: rgb(36, 34, 34);
 }
 
 .companyName{
     margin: 0px;
     font-size: larger;
+    color: var(--text-color);
 }
 
 .nav {
@@ -46,14 +44,15 @@
 }
 
 .navLink {
+    color: var(--text-color);
     text-decoration: none;
-    color: rgba(36, 34, 34, 0.753);
+    transition: color 0.3s ease;
     font-size: medium; /* Relative unit for font size */
     font-weight: 500;
 }
 
 .navLink:hover {
-    color: #0d0d0f;
+    color: var(--primary-color);
     font-weight: 600;
     transform: rotate(-20deg);
 }
@@ -66,6 +65,7 @@
 .hamburgerMenu {
     display: none;
     cursor: pointer;
+    color: var(--text-color);
 }
 
 .closeButton {
@@ -91,24 +91,24 @@
 
 .popupNavLink {
     text-decoration: none;
-    color: #090909; /* White color for popup links */
+    color: var(--text-color); /* White color for popup links */
     /* font-size: x-large;  */
     /* font-weight: 500; */
 }
 
 .popupNavLink:hover {
-    color: #0d0d0f; /* Darker color on hover */
+    color: var(--text-color); /* Darker color on hover */
     font-weight: 600;
     transform: rotate(-20deg);
 }
 
 .popupNavLink.active {
-    color: #000000; /* Active link color */
+    color: var(--text-color); /* Active link color */
     font-weight: 600;
 }
 
 .popupNavLink.active:hover {
-    color: #000000; /* Active link hover color */
+    color: var(--text-color); /* Active link hover color */
     font-weight: 600;
     transform: rotate(-20deg);
 }
@@ -129,7 +129,7 @@
 
     .hamburgerMenu {
         display: contents;
-        color: #000000;
+        color: var(--text-color);
     }
 
     .mobileNavList {
@@ -137,7 +137,7 @@
         gap: 2rem; /* Relative unit for gap */
         list-style: none;
         text-decoration: none;
-        color: rgb(36, 34, 34);
+        color: var(--text-color);
         font-weight: 500;
         padding: 0.5rem 1rem; /* Relative units for padding */
         align-items: center;
@@ -164,7 +164,7 @@
 
     .hamburgerMenu {
         display: contents;
-        color: #000000;
+        color: var(--text-color);
     }
 
     .mobileNavList {
@@ -172,7 +172,7 @@
         gap: 2rem; /* Relative unit for gap */
         list-style: none;
         text-decoration: none;
-        color: rgb(36, 34, 34);
+        color: var(--text-color);
         font-weight: 500;
         padding: 0.5rem 1rem; /* Relative units for padding */
         align-items: center;

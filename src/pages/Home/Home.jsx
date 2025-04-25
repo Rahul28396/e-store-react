@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Banner from "../../components/Banner/Banner";
 import BrowseByCategory from "../../widgets/BrowseByCategory/BrowseByCategory";
 import ProductsSection from "../../widgets/ProductsSection/ProductsSection";
 import ProductsWidget from "../../widgets/ProductWidget/ProductsWidget";
 import Footer from "../../components/Footer/Footer";
+import { TitleContext } from "../../context/TitleConetxt";
 
 const Home = () => {
+  const { setTitle } = useContext(TitleContext);
+
+  useEffect(() => {
+    setTitle("E-Store - Home");
+  }, [setTitle]);
+
   return (
     <>
       <Banner
