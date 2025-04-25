@@ -1,0 +1,35 @@
+.accordianItem{
+    margin: 0.5rem 0;
+}
+
+.open {
+    background-color: var(--bg-color);
+}
+
+.accordianTitle{
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.accordianTitle h3{
+    margin: 0;
+    font-size: small;
+}
+
+.accordianContent{
+    padding: 1rem;
+}
+
+.accordianContainer{
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}

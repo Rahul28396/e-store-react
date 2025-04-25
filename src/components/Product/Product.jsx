@@ -9,7 +9,7 @@ const Product = ({ product, showFavIcon  }) => {
       {showFavIcon && <div className={styles.favoriteIcon}>
         <AiOutlineHeart size={24} />
       </div>}
-      <img src={`product-images/${image}`} alt={name} className={styles.productImage} />
+      <img src={`/product-images/${image}`} alt={name} className={styles.productImage} />
       <h2 className={styles.productName}>{name}</h2>
       <p className={styles.productPrice}>{price}</p>
       <button className={styles.addToCartButton}>Add to Cart</button>

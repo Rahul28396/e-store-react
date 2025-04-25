@@ -1,0 +1,29 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--bg-color);
+  margin-bottom: 1rem;
+}
+
+.breadcrumbItem {
+  margin: 0 5px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.breadcrumbLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.active {
+  font-weight: bold;
+  color: var(--label-color);
+}
+
+.breadcrumbSparator {
+  margin: 0 5px;
+  color: var(--separator-color);
+}
+

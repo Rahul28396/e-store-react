@@ -1,0 +1,95 @@
+.productListContainer {
+    display: flex;
+    gap: 3rem;
+}
+
+.filters {
+    width: 20%;
+}
+
+.productList {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.productListHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sortOptions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sortfileterContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filtersInMobileView {
+    display: none;
+}
+
+.filterButton {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.productCount{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    .productListContainer {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .filters {
+        display: none;
+    }
+
+    .filtersInMobileView {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        
+    }
+
+    .productListHeader {
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: center;
+    }
+
+    .sortfileterContainer {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .productCount {
+        font-size: 1rem;
+        display: flex;
+        justify-content: start;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+}

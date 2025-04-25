@@ -5,6 +5,7 @@
   --hover-color: #f0f0f0;
   --active-color: #e0e0e0;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --separator-color: #dddddd;
 }
 
 [data-theme="dark"] {
@@ -14,6 +15,7 @@
   --hover-color: #222222;
   --active-color: #333333;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.64);
+  --separator-color: #444444;
 }
 
 body {
@@ -37,4 +39,65 @@ button {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+select {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: none;
+  border-bottom: 2px solid var(--separator-color);
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+select:focus {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: none;
+  border-bottom: 2px solid var(--separator-color);
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+select:focus {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+select::after {
+  content: '▼';
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+}
+
+option {
+  padding: 24px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+select:hover,
+select:focus {
+  background-color: var(--hover-color);
 }

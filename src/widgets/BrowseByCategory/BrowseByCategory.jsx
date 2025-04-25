@@ -1,15 +1,10 @@
 import React from "react";
-import { CiMobile3 } from "react-icons/ci";
-import { BsSmartwatch } from "react-icons/bs";
-import { BsCamera } from "react-icons/bs";
-import { RiComputerLine } from "react-icons/ri";
-import { ImHeadphones } from "react-icons/im";
-import { IoGameControllerSharp } from "react-icons/io5";
 import styles from "./BrowseByCategory.module.css";
 import PanelWithHeader from "../PanelWithHeader/PanelWithHeader";
 import Scrollbar from "../../components/Scrollbar/Scrollbar";
+import { Link } from "react-router";
 
-const BrowseByCategory = () => {
+const BrowseByCategory = ({ categories }) => {
   return (
     <PanelWithHeader
       title="Browse By Category"
@@ -18,42 +13,21 @@ const BrowseByCategory = () => {
       }}
     >
       <Scrollbar direction="horizontal">
-        <div className={styles["category-item"]}>
-          <span>
-            <CiMobile3 size={30} />
-          </span>
-          <h3 className={styles.title}>Mobiles</h3>
-        </div>
-        <div className={styles["category-item"]}>
-          <span>
-            <BsSmartwatch size={30} />
-          </span>
-          <h3 className={styles.title}>Smart Watches</h3>
-        </div>
-        <div className={styles["category-item"]}>
-          <span>
-            <BsCamera size={30} />
-          </span>
-          <h3 className={styles.title}>Cameras</h3>
-        </div>
-        <div className={styles["category-item"]}>
-          <span>
-            <RiComputerLine size={30} />
-          </span>
-          <h3 className={styles.title}>Computers</h3>
-        </div>
-        <div className={styles["category-item"]}>
-          <span>
-            <ImHeadphones size={30} />
-          </span>
-          <h3 className={styles.title}>Headphones</h3>
-        </div>
-        <div className={styles["category-item"]}>
-          <span>
-            <IoGameControllerSharp size={30} />
-          </span>
-          <h3 className={styles.title}>Games</h3>
-        </div>
+        {categories.map((category) => {
+          const Icon = category.icon;
+          return (
+            <Link
+              to={`category/${category.slug}`}
+              key={category.id}
+              className={styles["category-item"]}
+            >
+              <span>
+                <Icon size={30} />
+              </span>
+              <h3 className={styles.title}>{category.title}</h3>
+            </Link>
+          );
+        })}
       </Scrollbar>
     </PanelWithHeader>
   );
