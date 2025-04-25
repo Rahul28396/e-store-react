@@ -1,13 +1,17 @@
 :root {
-  --bg-color: #ffffff;
+  --bg-color: white;
   --text-color: #111111;
   --primary-color: #1e90ff;
+  --hover-color: #f0f0f0;
+  --active-color: #e0e0e0;
 }
 
 [data-theme="dark"] {
-  --bg-color: #111111;
+  --bg-color: #111111d2;
   --text-color: #ffffff;
   --primary-color: #1e90ff;
+  --hover-color: #222222;
+  --active-color: #333333;
 }
 
 body {
@@ -34,6 +38,6 @@ button {
 }
 
 button:hover {
-  background-color: var(--text-color);
+  background-color: var(--hover-color);
   color: var(--bg-color);
 }

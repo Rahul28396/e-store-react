@@ -12,7 +12,7 @@
 }
 
 .productCard:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 12px var(--hover-color);
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .addToCartButton:hover {
-    background-color: var(--bg-color);
+    background-color: var(--hover-color);
     color: var(--text-color);
     transition: background-color 0.3s ease-in-out;
 }

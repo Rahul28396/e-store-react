@@ -38,14 +38,14 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: var(--bg-color);
+    background-color: var(--text-color);
     transition: width 0.3s ease, left 0.3s ease;
     transform: translateX(-50%);
 }
 
 .tab-button.active {
-    color: var(--bg-color);
-    background-color: var(--text-color);
+    color: var(--text-color);
+    background-color: var(--hover-color);
     font-weight: bold;
 }
 
@@ -55,6 +55,7 @@
 }
 
 .tab-button:hover {
-    background-color: #ddd;
+    background-color: var(--hover-color);
+    color: var(--text-color);
     transition: background-color 0.3s ease;
 }

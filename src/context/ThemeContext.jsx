@@ -22,7 +22,7 @@ const ThemeProvider = ({ children }) => {
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setTheme(savedTheme || (prefersDark ? themes.dark : themes.light));
+    setTheme(savedTheme);
   }, []);
 
   // Update the `data-theme` attribute on the `<html>` element

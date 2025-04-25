@@ -17,7 +17,7 @@
 
 .bannerContent {
     position: absolute;
-    color: var(--bg-color);
+    color: white;
     text-align: center;
     z-index: 1;
     padding: 0 20px; /* Add padding for better spacing on smaller screens */
@@ -35,8 +35,8 @@
 }
 
 .bannerButton {
-    background-color: var(--text-color);
-    color: var(--bg-color);
+    background-color: #ffffff47;
+    color: white;
     padding: 10px 30px; /* Adjust padding for mobile */
     border: 1px solid white;
     border-radius: 50px;
@@ -45,9 +45,9 @@
 }
 
 .bannerButton:hover {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: #0057b335;
     border: 1px solid white;
+    color: white;
 }
 
 /* Media queries for larger screens */
