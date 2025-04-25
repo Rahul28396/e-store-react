@@ -23,7 +23,7 @@
     padding: 16px;
     margin: 0;
     border: none;
-    background-color: var(--bg-color);
+    background-color: transparent;
     color: var(--text-color);
     cursor: pointer;
     font-size: 14px;
