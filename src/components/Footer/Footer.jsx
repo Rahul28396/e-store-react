@@ -7,17 +7,16 @@ const Footer = () => {
     <footer className={styles.footer}>
       <section className={styles.footerSections}>
         <div className={styles.footerInfo}>
-          <h2>E-Store</h2>
+          <h2>GadgetZone</h2>
           <p>
-            Your one-stop shop for everything! Shop now and enjoy great deals.
-            Your one-stop shop for everything! Shop now and enjoy great deals.
-            Your one-stop shop for everything! Shop now and enjoy great deals.
-            Your one-stop shop for everything! Shop now and enjoy great deals.
+            Discover the latest and greatest in electronic gadgets! From
+            cutting-edge smartphones to must-have accessories, we've got
+            everything you need to stay connected and ahead of the curve.
           </p>
         </div>
         <div className={styles.footerLinks}>
-          <div >
-            <h3>Services</h3>
+          <div>
+            <h3>Shop With Us</h3>
             <ul>
               <li className={styles.footerLink}>
                 <a href="/customer-service">Customer Service</a>
@@ -39,8 +38,8 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div >
-            <h3>Assistance to buyer</h3>
+          <div>
+            <h3>Support</h3>
             <ul>
               <li className={styles.footerLink}>
                 <a href="/order-tracking">Order Tracking</a>
@@ -58,7 +57,7 @@ const Footer = () => {
                 <a href="/faq">FAQ</a>
               </li>
               <li className={styles.footerLink}>
-                <a href="/feedback">Feedback</a>
+                <a href="/tech-support">Tech Support</a>
               </li>
             </ul>
           </div>
@@ -84,7 +83,7 @@ const Footer = () => {
           </a>
         </div>
         <div data-testid="rights" className={styles.footerContent}>
-          <p>&copy; {new Date().getFullYear()} E-Store. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} GadgetZone. All rights reserved.</p>
         </div>
       </section>
     </footer>

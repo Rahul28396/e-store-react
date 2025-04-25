@@ -23,7 +23,7 @@ const Header = () => {
           <div className={styles.hamburgerMenu} onClick={togglePopup}>
             <RxHamburgerMenu size={30} />
           </div>
-          <h1 className={styles.companyName}>E-Store</h1>
+          <h1 className={styles.companyName}>GadgetZone</h1>
         </div>
         <div className={styles.searchContainer}>
           <SearchInput />

@@ -81,6 +81,11 @@
     }
 }
 
+.panel{
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (max-width: 480px) {
     .PanelWithHeader {
         padding: 0.5rem;

@@ -10,13 +10,13 @@ const Home = () => {
   const { setTitle } = useContext(TitleContext);
 
   useEffect(() => {
-    setTitle("E-Store - Home");
+    setTitle("GadgetZone - Home");
   }, [setTitle]);
 
   return (
     <>
       <Banner
-        title="Welcome to E-Store"
+        title="Welcome to GadgetZone"
         subtitle="Your one-stop shop for everything!"
         imageUrl="banner1.jpg" // Replace with your image URL
         isImageClickable={true}
@@ -35,6 +35,7 @@ const Home = () => {
           { id: 2, name: "Product 2", price: "$20", image: "image2.png" },
           { id: 3, name: "Product 3", price: "$30", image: "image3.png" },
           { id: 4, name: "Product 4", price: "$40", image: "image4.png" },
+          { id: 5, name: "Product 5", price: "$40", image: "image2.png" },
         ]}
       />
       <Banner
