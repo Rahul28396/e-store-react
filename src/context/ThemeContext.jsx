@@ -16,14 +16,7 @@ export const useTheme = () => {
 };
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(themes.light);
-
-  // Load theme from localStorage or system preference
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setTheme(savedTheme);
-  }, []);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || themes.light);
 
   // Update the `data-theme` attribute on the `<html>` element
   useEffect(() => {
