@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./BrowseByCategory.module.css";
 import PanelWithHeader from "../PanelWithHeader/PanelWithHeader";
-import Scrollbar from "../../components/Scrollbar/Scrollbar";
+import Scrollbar from "../../components/UI/Scrollbar/Scrollbar";
 import { Link } from "react-router";
 
 const BrowseByCategory = ({ categories }) => {

@@ -1,5 +1,5 @@
-import { TabProvider } from "../../components/Tab/TabContext";
-import Tab from "../../components/Tab/Tab";
+import { TabProvider } from "../../components/UI/Tab/TabContext";
+import Tab from "../../components/UI/Tab/Tab";
 import styles from "./ProductsSection.module.css";
 import ProductList from "../../components/ProductList/ProductList";
 

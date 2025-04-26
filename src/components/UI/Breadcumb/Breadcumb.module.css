@@ -1,13 +1,13 @@
 .breadcrumb {
   display: flex;
   align-items: center;
-  padding: 10px;
   background-color: var(--bg-color);
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .breadcrumbItem {
-  margin: 0 5px;
+  margin-right: 8px;
   font-size: 14px;
   color: var(--text-color);
 }
@@ -26,4 +26,3 @@
   margin: 0 5px;
   color: var(--separator-color);
 }
-

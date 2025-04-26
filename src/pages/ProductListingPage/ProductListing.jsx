@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import Breadcrumb from "../../components/Breadcumb/Breadcumb";
-import { AccordianProvider } from "../../components/Accordian/AccordianContext";
+import Breadcrumb from "../../components/UI/Breadcumb/Breadcumb";
 import styles from "./ProductListing.module.css";
 import ProductList from "../../components/ProductList/ProductList";
+import { IoChevronBackOutline } from "react-icons/io5";
+import Filter from "../../components/Filter/Filter";
 import { VscSettings } from "react-icons/vsc";
+import FilterInMobileView from "../../components/FilterInMobileView/FilterInMobileView";
+import Pagination from "../../components/UI/Pagination/Pagination";
 
 const ProductListing = () => {
   const { category } = useParams();
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const products = [
     {
       id: 1,
@@ -107,209 +111,84 @@ const ProductListing = () => {
     },
   ];
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768 && isFilterModalOpen) {
+      setIsFilterModalOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isFilterModalOpen]);
+
   return (
     <section className="container">
-      <Breadcrumb
-        items={[
-          { label: "Home", link: "/" },
-          { label: "Products" },
-          {
-            label: category,
-            link: `/category/${
-              category.charAt(0).toUpperCase() + category.slice(1)
-            }`,
-          },
-        ]}
-      />
+      {!isFilterModalOpen && (
+        <>
+          <Breadcrumb
+            items={[
+              { label: "Home", link: "/" },
+              { label: "Products" },
+              {
+                label: category,
+                link: `/category/${
+                  category.charAt(0).toUpperCase() + category.slice(1)
+                }`,
+              },
+            ]}
+          />
 
-      <section className={styles.productListContainer}>
-        <div className={styles.filters}>
-          <AccordianProvider value={"Brands"}>
-            <AccordianProvider.Container>
-              <AccordianProvider.Item title="Brands">
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="brand1"
-                    name="brand1"
-                    value="Brand 1"
-                  />
-                  <label htmlFor="brand1">Brand 1</label>
+          <section className={styles.productListContainer}>
+            <Filter classes={styles.filters} />
+            <div className={styles.productList}>
+              <div className={styles.productListHeader}>
+                <span className={styles.productCount}>
+                  {products.length} Products
+                </span>
+                <div className={styles.sortfileterContainer}>
+                  <div className={styles.sortOptions}>
+                    <select id="sort" name="sort">
+                      <option value="popularity">By Popularity</option>
+                      <option value="priceLowToHigh">Price: Low to High</option>
+                      <option value="priceHighToLow">Price: High to Low</option>
+                      <option value="newest">Newest Arrivals</option>
+                    </select>
+                  </div>
+                  <div className={styles.filtersInMobileView}>
+                    <button
+                      className={styles.filterButton}
+                      onClick={() => setIsFilterModalOpen((prev) => !prev)}
+                    >
+                      Filters
+                      <VscSettings size={20} />
+                    </button>
+                  </div>
                 </div>
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="brand2"
-                    name="brand2"
-                    value="Brand 2"
-                  />
-                  <label htmlFor="brand2">Brand 2</label>
-                </div>
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="brand3"
-                    name="brand3"
-                    value="Brand 3"
-                  />
-                  <label htmlFor="brand3">Brand 3</label>
-                </div>
-              </AccordianProvider.Item>
-              <AccordianProvider.Item title="Price Range">
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="price1"
-                    name="price1"
-                    value="$0 - $50"
-                  />
-                  <label htmlFor="price1">$0 - $50</label>
-                </div>
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="price2"
-                    name="price2"
-                    value="$50 - $100"
-                  />
-                  <label htmlFor="price2">$50 - $100</label>
-                </div>
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="price3"
-                    name="price3"
-                    value="$100 - $200"
-                  />
-                  <label htmlFor="price3">$100 - $200</label>
-                </div>
-              </AccordianProvider.Item>
-              <AccordianProvider.Item title="Ratings">
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="rating1"
-                    name="rating1"
-                    value="1 Star & Up"
-                  />
-                  <label htmlFor="rating1">1 Star & Up</label>
-                </div>
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="rating2"
-                    name="rating2"
-                    value="2 Stars & Up"
-                  />
-                  <label htmlFor="rating2">2 Stars & Up</label>
-                </div>
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="rating3"
-                    name="rating3"
-                    value="3 Stars & Up"
-                  />
-                  <label htmlFor="rating3">3 Stars & Up</label>
-                </div>
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="rating4"
-                    name="rating4"
-                    value="4 Stars & Up"
-                  />
-                  <label htmlFor="rating4">4 Stars & Up</label>
-                </div>
-              </AccordianProvider.Item>
-              <AccordianProvider.Item title="Availability">
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="available"
-                    name="available"
-                    value="In Stock"
-                  />
-                  <label htmlFor="available">In Stock</label>
-                </div>
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="outOfStock"
-                    name="outOfStock"
-                    value="Out of Stock"
-                  />
-                  <label htmlFor="outOfStock">Out of Stock</label>
-                </div>
-              </AccordianProvider.Item>
-              <AccordianProvider.Item title="Discount">
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="discount1"
-                    name="discount1"
-                    value="10% & Up"
-                  />
-                  <label htmlFor="discount1">10% & Up</label>
-                </div>
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="discount2"
-                    name="discount2"
-                    value="20% & Up"
-                  />
-                  <label htmlFor="discount2">20% & Up</label>
-                </div>
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="discount3"
-                    name="discount3"
-                    value="30% & Up"
-                  />
-                  <label htmlFor="discount3">30% & Up</label>
-                </div>
-                <div className="filterItem">
-                  <input
-                    type="checkbox"
-                    id="discount4"
-                    name="discount4"
-                    value="40% & Up"
-                  />
-                  <label htmlFor="discount4">40% & Up</label>
-                </div>
-              </AccordianProvider.Item>
-            </AccordianProvider.Container>
-          </AccordianProvider>
-        </div>
-        <div className={styles.productList}>
-          <div className={styles.productListHeader}>
-            <span className={styles.productCount}>
-              {products.length} Products
-            </span>
-            <div className={styles.sortfileterContainer}>
-              <div className={styles.sortOptions}>
-                <label htmlFor="sort">Sort by:</label>
-                <select id="sort" name="sort">
-                  <option value="popularity">Popularity</option>
-                  <option value="priceLowToHigh">Price: Low to High</option>
-                  <option value="priceHighToLow">Price: High to Low</option>
-                  <option value="newest">Newest Arrivals</option>
-                </select>
               </div>
-              <div className={styles.filtersInMobileView}>
-                <button className={styles.filterButton}>
-                  Filters
-                  <VscSettings size={20}/>
-                </button>
-              </div>
+
+              <ProductList products={products} />
+
+              <Pagination
+                totalItems={products.length}
+                itemsPerPageOptions={[10, 20, 30]}
+                onPageChange={(page, itemsPerPage) => {
+                  console.log(`Page: ${page}, Items per page: ${itemsPerPage}`);
+                }}
+              />
+              
             </div>
-          </div>
+          </section>
+        </>
+      )}
 
-          <ProductList products={products} />
-        </div>
-      </section>
+      <FilterInMobileView 
+        isOpen={isFilterModalOpen} 
+        setIsOpen={setIsFilterModalOpen} 
+      />
     </section>
   );
 };

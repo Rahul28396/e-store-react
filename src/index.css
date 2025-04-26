@@ -6,6 +6,7 @@
   --active-color: #e0e0e0;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --separator-color: #dddddd;
+  --disabled-color: #cccccc;
 }
 
 [data-theme="dark"] {
@@ -16,6 +17,7 @@
   --active-color: #333333;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.64);
   --separator-color: #444444;
+  --disabled-color: #555555;
 }
 
 body {
@@ -47,18 +49,6 @@ button {
   padding: 20px;
 }
 
-select {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  border: none;
-  border-bottom: 2px solid var(--separator-color);
-  padding: 10px;
-  font-size: 16px;
-  outline: none;
-  cursor: pointer;
-  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-}
-
 select:focus {
   border-bottom: 2px solid var(--primary-color);
 }
@@ -69,11 +59,9 @@ select {
   -moz-appearance: none;
   background-color: var(--bg-color);
   color: var(--text-color);
-  border: none;
-  border-bottom: 2px solid var(--separator-color);
-  padding: 10px;
-  font-size: 16px;
-  outline: none;
+  border: 1px solid var(--text-color);
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
   cursor: pointer;
   transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   position: relative;
@@ -81,13 +69,6 @@ select {
 
 select:focus {
   border-bottom: 2px solid var(--primary-color);
-}
-
-select::after {
-  content: '▼';
-  position: absolute;
-  right: 10px;
-  pointer-events: none;
 }
 
 option {

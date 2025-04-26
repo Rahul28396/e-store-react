@@ -60,7 +60,6 @@ const Home = () => {
         onImageClick={() => console.log("Banner image clicked!")}
         showButton={false}
       />
-      <Footer />
     </>
   );
 };

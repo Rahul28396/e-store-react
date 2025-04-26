@@ -3,10 +3,6 @@
     gap: 3rem;
 }
 
-.filters {
-    width: 20%;
-}
-
 .productList {
     width: 80%;
     display: flex;
@@ -18,6 +14,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    /* Adjust for smaller screens */
 }
 
 .sortOptions {
@@ -30,6 +28,12 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
+    /* Adjust for smaller screens */
+}
+
+.filters {
+    width: 20%;
 }
 
 .filtersInMobileView {
@@ -49,15 +53,46 @@
     gap: 1rem;
 }
 
-.productCount{
+.productCount {
     font-size: 1.2rem;
     font-weight: 500;
 }
 
+
+/* Tablet view adjustments */
+@media screen and (max-width: 1024px) {
+    .productListContainer {
+        gap: 1rem;
+    }
+
+    .filters {
+        width: 25%;
+        /* Adjust filter width for tablets */
+    }
+
+    .productList {
+        width: 75%;
+        /* Adjust product list width for tablets */
+    }
+
+    .productListHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .sortfileterContainer {
+        justify-content: space-between;
+        width: 100%;
+
+    }
+}
+
+/* Mobile view adjustments */
 @media screen and (max-width: 768px) {
     .productListContainer {
+        flex-direction: column;
         width: 100%;
-        justify-content: center;
     }
 
     .filters {
@@ -69,7 +104,10 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        
+    }
+
+    .productList {
+        width: 100%;
     }
 
     .productListHeader {
@@ -79,17 +117,21 @@
     }
 
     .sortfileterContainer {
-        flex-direction: row-reverse;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
+        gap: 1rem;
     }
 
     .productCount {
         font-size: 1rem;
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         width: 100%;
         margin-top: 1rem;
     }
 
+    .sortOptions {
+        gap: 6px
+    }
 }

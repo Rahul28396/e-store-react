@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Header.module.css";
 import { CiUser } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { MdFavoriteBorder } from "react-icons/md";
-import SearchInput from "../SearchInput/SearchInput";
 import { Link } from "react-router";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../UI/Sidebar/Sidebar";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import SearchInput from "../UI/SearchInput/SearchInput";
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);

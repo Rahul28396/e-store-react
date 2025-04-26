@@ -1,0 +1,53 @@
+.filterHeader {
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.filterActions {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    margin: 1rem 0rem;
+}
+
+.filterActions button {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    
+}
+
+.filterActions button:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.backButton {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+
+    .filterActions {
+        justify-content: center; /* Center buttons on smaller screens */
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .filterActions button {
+        padding: 0.5rem; /* Reduce padding for very small screens */
+        font-size: 0.9rem; /* Adjust font size */
+    }
+}
