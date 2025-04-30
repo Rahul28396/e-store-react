@@ -9,6 +9,7 @@ import {
 import Home from './pages/Home/Home.jsx';
 import TitleContextProvider from './context/TitleConetxt.jsx';
 import ProductListing from './pages/ProductListingPage/ProductListing.jsx';
+import ProductDetails from './pages/ProductDetails/ProductDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
       {
         path: 'category/:category',
         element: <ProductListing />,
+        errorElement: <div>Oops! Something went wrong.</div>,
+      },
+      {
+        path: 'product/:productId',
+        element: <ProductDetails />,
         errorElement: <div>Oops! Something went wrong.</div>,
       }
     ]

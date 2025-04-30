@@ -1,10 +1,10 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 const TitleContext = createContext('E-Store');
 
 const TitleContextProvider = ({ children }) => {
   const setTitle = (title) => {
-    document.title = title;
+    document.title = 'GadgetZone - ' + title;
   };
 
   return (
@@ -12,6 +12,14 @@ const TitleContextProvider = ({ children }) => {
       {children}
     </TitleContext.Provider>
   );
+}
+
+export const useTitle = () => {
+  const context = useContext(TitleContext);
+  if (!context) {
+    throw new Error("useTitle must be used within a TitleProvider");
+  }
+  return context;
 }
 
 export { TitleContext };

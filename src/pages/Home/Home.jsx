@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import Banner from "../../components/Banner/Banner";
 import BrowseByCategory from "../../widgets/BrowseByCategory/BrowseByCategory";
 import ProductsSection from "../../widgets/ProductsSection/ProductsSection";
 import ProductsWidget from "../../widgets/ProductWidget/ProductsWidget";
 import Footer from "../../components/Footer/Footer";
-import { TitleContext } from "../../context/TitleConetxt";
+import { TitleContext, useTitle } from "../../context/TitleConetxt";
 import { CiMobile3 } from "react-icons/ci";
 import { BsSmartwatch } from "react-icons/bs";
 import { BsCamera } from "react-icons/bs";
@@ -13,10 +13,10 @@ import { ImHeadphones } from "react-icons/im";
 import { IoGameControllerSharp } from "react-icons/io5";
 
 const Home = () => {
-  const { setTitle } = useContext(TitleContext);
+  const { setTitle } = useTitle();
 
   useEffect(() => {
-    setTitle("GadgetZone - Home");
+    setTitle("Home");
   }, [setTitle]);
 
   const categories = [

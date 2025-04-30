@@ -8,9 +8,12 @@ import Filter from "../../components/Filter/Filter";
 import { VscSettings } from "react-icons/vsc";
 import FilterInMobileView from "../../components/FilterInMobileView/FilterInMobileView";
 import Pagination from "../../components/UI/Pagination/Pagination";
+import { useTitle } from "../../context/TitleConetxt";
 
 const ProductListing = () => {
   const { category } = useParams();
+  const { setTitle } = useTitle();
+
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const products = [
     {
@@ -124,6 +127,10 @@ const ProductListing = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [isFilterModalOpen]);
+
+  useEffect(() => {
+    setTitle(category.charAt(0).toUpperCase() + category.slice(1));
+  }, [category, setTitle]);
 
   return (
     <section className="container">

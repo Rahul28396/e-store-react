@@ -1,12 +1,14 @@
 :root {
   --bg-color: white;
-  --text-color: #111111;
+  --text-color: #1e1e1e;
   --primary-color: #1e90ff;
   --hover-color: #f0f0f0;
   --active-color: #e0e0e0;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --separator-color: #dddddd;
   --disabled-color: #cccccc;
+  --border-color: #cccccc;
+  --highlight-bg-color: #f9f9f9;
 }
 
 [data-theme="dark"] {
@@ -18,6 +20,8 @@
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.64);
   --separator-color: #444444;
   --disabled-color: #555555;
+  --border-color: #666666;
+  --highlight-bg-color: #232841;
 }
 
 body {
@@ -81,4 +85,41 @@ option {
 select:hover,
 select:focus {
   background-color: var(--hover-color);
+}
+
+.btn-primary {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid var(--text-color);
+  width: 100%;
+  max-width: 20rem; /* Limit max width */
+  height: 3rem; /* Set height */
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color);
+  color: var(--text-color);
+}
+
+.btn-primary:active {
+  background-color: var(--active-color);
+}
+
+.btn-primary:disabled {
+    background-color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+.btn-primary:disabled:hover {
+    background-color: var(--disabled-color);
+    color: var(--text-color);
+}
+
+.btn-tertiary {
+  background-color: transparent;
+  color: var(--text-color);
 }

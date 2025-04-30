@@ -17,7 +17,9 @@
 }
 
 .paginationButton:hover{
-    background-color: var(--hover-color);
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+    
 }
 
 .paginationButton:disabled{

@@ -58,7 +58,6 @@
     font-weight: 500;
 }
 
-
 /* Tablet view adjustments */
 @media screen and (max-width: 1024px) {
     .productListContainer {

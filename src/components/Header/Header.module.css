@@ -11,6 +11,11 @@
     color: var(--text-color);
 }
 
+.logoLink {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 .logo{
     display: flex;
     align-items: center;
