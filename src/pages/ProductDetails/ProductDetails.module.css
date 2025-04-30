@@ -1,12 +1,14 @@
 .productDetailsSection {
     display: flex;
-    flex-direction: column; /* Default for mobile */
+    flex-direction: column;
+    /* Default for mobile */
     gap: 2rem;
 }
 
 .imageSection {
     display: flex;
-    flex-direction: column-reverse; /* Default for mobile */
+    flex-direction: column-reverse;
+    /* Default for mobile */
     align-items: center;
     gap: 1rem;
     margin: 0;
@@ -14,7 +16,8 @@
 
 .imageSlider {
     display: flex;
-    flex-direction: row; /* Default for mobile */
+    flex-direction: row;
+    /* Default for mobile */
     justify-content: center;
     gap: 1rem;
 }
@@ -31,7 +34,8 @@
 }
 
 .selectedImage {
-    width: 100%; /* Full width for mobile */
+    width: 100%;
+    /* Full width for mobile */
     max-width: 20rem;
     object-fit: cover;
     border-radius: 10px;
@@ -177,7 +181,7 @@
 
 .ratingDistribution {
     display: flex;
-    width: 100%;   
+    width: 100%;
 }
 
 .ratingDistribution ul {
@@ -214,7 +218,7 @@
     gap: 2rem;
 }
 
-.userImageContainer{
+.userImageContainer {
     display: flex;
 }
 
@@ -225,7 +229,7 @@
     object-fit: cover;
 }
 
-.reviewContent{
+.reviewContent {
     display: flex;
     flex-direction: column;
 }
@@ -264,6 +268,28 @@
     font-size: 1rem;
     box-sizing: border-box;
 }
+.backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
 
 /* Tablet-specific styles */
 @media (min-width: 768px) {
@@ -293,7 +319,7 @@
         width: 20%;
     }
 
-    .ratingDistribution{
+    .ratingDistribution {
         width: 70%;
     }
 
@@ -323,6 +349,7 @@
     }
 
     .specificationHighlights {
-        justify-content: flex-start; /* Align to the left for larger screens */
+        justify-content: flex-start;
+        /* Align to the left for larger screens */
     }
 }

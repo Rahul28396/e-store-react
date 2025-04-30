@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsWidget from "../../widgets/ProductWidget/ProductsWidget";
 import styles from "./ProductDetails.module.css";
 import { CiMobile3 } from "react-icons/ci";
@@ -35,10 +35,31 @@ const ProductDetails = () => {
   ];
 
   const [selectedImage, setSelectedImage] = useState(0);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   const handleImageClick = (index) => {
     setSelectedImage(index);
   };
+
+  useEffect(() => {
+    // scroll to top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const halfScreenHeight = window.innerHeight / 2;
+      setShowBackToTop(scrollPosition > halfScreenHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <section className="container">
@@ -419,6 +440,13 @@ const ProductDetails = () => {
           products={relatedProducts}
         />
       </section>
+      
+      <button
+        className={`${styles.backToTop} ${showBackToTop ? styles.show : ""}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <span>Back to top</span>
+      </button>
     </section>
   );
 };
