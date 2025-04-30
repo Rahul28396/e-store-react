@@ -8,6 +8,7 @@ import { FaCamera } from "react-icons/fa6";
 import { GiBattery100 } from "react-icons/gi";
 import { FaMemory } from "react-icons/fa";
 import ViewMorePanel from "../../components/ViewMorePanel/ViewMorePanel";
+import StarRating from "../../components/UI/StarRating/StarRating";
 
 const ProductDetails = () => {
   const product = {
@@ -64,7 +65,7 @@ const ProductDetails = () => {
         <section className="shortDetailsSection">
           <h1 className={styles.productTitle}>{product.name}</h1>
           <p className={styles.price}>
-            <p className={styles.specialOffer}>Special Offer</p>
+            <span className={styles.specialOffer}>Special Offer</span>
             {product.discountedPrice}
             <span className={styles.priceOff}>({product.price})</span>
             <span className={styles.discount}>10 % off</span>
@@ -274,22 +275,134 @@ const ProductDetails = () => {
           </section>
         </ViewMorePanel>
       </section>
+
+      {/* Review sections */}
       <section className="reviewsSection">
-        <h2>Customer Reviews</h2>
-        <div className="review">
-          <p>Review 1: Great product!</p>
-          <p>Rating: 5/5</p>
-        </div>
-        <div className="review">
-          <p>Review 2: Satisfied with the purchase.</p>
-          <p>Rating: 4/5</p>
-        </div>
-        <div className="review">
-          <p>Review 3: Worth the price.</p>
-          <p>Rating: 4.5/5</p>
-        </div>
-        <button>View All Reviews</button>
+        <ViewMorePanel title={"Reviews"}>
+          <div>
+            <div className={styles.reviewSummary}>
+              <div className={styles.rating}>
+                <h3>4.5/5</h3>
+                <span>of 1204 reviews</span>
+                <StarRating initialRating={4} disabled={true}/>
+              </div>
+              <div className={styles.ratingDistribution}>
+                <ul>
+                  <li>
+                    <span>Excellect</span>
+                    <input className={styles.ratingBar} type="range" min="0" max="5" value="4.5" disabled />
+                    <span>530</span>
+                  </li>
+                  <li>
+                    <span>Very Good</span>
+                    <input className={styles.ratingBar} type="range" min="0" max="5" value="4.0" disabled />
+                    <span>500</span>
+                  </li>
+                  <li>
+                    <span>Good</span>
+                    <input className={styles.ratingBar} type="range" min="0" max="5" value="3.5" disabled />
+                    <span>100</span>
+                  </li>
+                  <li>
+                    <span>Average</span>
+                    <input className={styles.ratingBar} type="range" min="0" max="5" value="3.0" disabled />
+                    <span>50</span>
+                  </li>
+                  <li>
+                    <span>Poor</span>
+                    <input className={styles.ratingBar} type="range" min="0" max="5" value="2.0" disabled />
+                    <span>24</span>
+                  </li>
+                  <li>
+                    <span>Very Poor</span>
+                    <input className={styles.ratingBar} type="range" min="0" max="5" value="1.0" disabled />
+                    <span>0</span>
+                  </li> 
+                </ul>
+              </div>              
+            </div>
+            
+            <div className={styles.reviewActions}>
+                <input type="text" placeholder="Leave comment" className={styles.reviewInput} />
+            </div>
+          </div>
+          <div className={styles.reviews}>
+            <div className={styles.review}>
+              <div className={styles.userImageContainer}>
+                <img
+                  src="/product-images/image1.png"
+                  alt="User"
+                  className={styles.userImage}
+                />
+              </div>
+              <div className={styles.reviewContent}>
+                <div className={styles.reviewHeader}>
+                  <h3>John Doe</h3>
+                  <span>{new Date().toISOString()}</span>
+                </div>
+                <StarRating initialRating={4} disabled={true}/>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                </p>
+              </div>
+            </div>
+            
+            <div className={styles.review}>
+              <div className={styles.userImageContainer}>
+                <img
+                  src="/product-images/image1.png"
+                  alt="User"
+                  className={styles.userImage}
+                />
+              </div>
+              <div className={styles.reviewContent}>
+                <div className={styles.reviewHeader}>
+                  <h3>John Doe</h3>
+                  <span>{new Date().toISOString()}</span>
+                </div>
+                <StarRating initialRating={4} disabled={true}/>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.review}>
+              <div className={styles.userImageContainer}>
+                <img
+                  src="/product-images/image1.png"
+                  alt="User"
+                  className={styles.userImage}
+                />
+              </div>
+              <div className={styles.reviewContent}>
+                <div className={styles.reviewHeader}>
+                  <h3>John Doe</h3>
+                  <span>{new Date().toISOString()}</span>
+                </div>
+                <StarRating initialRating={4} disabled={true}/>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                </p>
+              </div>
+            </div>
+          </div>
+        </ViewMorePanel>
       </section>
+
+      {/* Related product sections */}
       <section className="relatedProductsSection">
         <ProductsWidget
           title="Related Products"
@@ -297,6 +410,8 @@ const ProductDetails = () => {
           products={relatedProducts}
         />
       </section>
+
+      {/* Recently view products */}
       <section className="recentlyViewedProductsSection">
         <ProductsWidget
           title="Recently viewed Products"

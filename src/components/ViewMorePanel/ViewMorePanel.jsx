@@ -3,13 +3,13 @@ import styles from './ViewMorePanel.module.css'; // Assuming you have a CSS modu
 
 const ViewMorePanel = ({ title, children, fetchContentFromBackend }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const [visibleContent, setVisibleContent] = useState(children.slice(0, 100)); // Show first 100 characters by default
+    const [visibleContent, setVisibleContent] = useState(typeof children === 'string' ? children.slice(0, 100) : children); // Handle string slicing
     const [isLoading, setIsLoading] = useState(false);
 
     const togglePanel = async () => {
         if (isExpanded) {
             // Collapse to initial content
-            setVisibleContent(children.slice(0, 100));
+            setVisibleContent(typeof children === 'string' ? children.slice(0, 100) : children);
         } else {
             if (fetchContentFromBackend) {
                 // Fetch content from backend
@@ -24,7 +24,7 @@ const ViewMorePanel = ({ title, children, fetchContentFromBackend }) => {
                 }
             } else {
                 // Expand to full content from frontend
-                setVisibleContent(children);
+                setVisibleContent(typeof children === 'string' ? children : children);
             }
         }
         setIsExpanded(!isExpanded);
@@ -36,9 +36,11 @@ const ViewMorePanel = ({ title, children, fetchContentFromBackend }) => {
             <div className={styles["panel-content"]}>
                 {isLoading ? 'Loading...' : visibleContent}
             </div>
-            <button className="btn-primary btn-terciary" onClick={togglePanel} disabled={isLoading}>
-                {isExpanded ? 'View Less' : 'View More'}
-            </button>
+            <div className={styles["panel-footer"]}>
+                <button className="btn-primary btn-terciary" onClick={togglePanel} disabled={isLoading}>
+                    {isExpanded ? 'View Less' : 'View More'}
+                </button>
+            </div>            
         </div>
     );
 };

@@ -1,0 +1,16 @@
+.star{
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #e8e4de;
+    margin-right: 0.2rem;
+}
+
+.filled{
+    color: #f39c12;
+}
+
+.star-rating{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

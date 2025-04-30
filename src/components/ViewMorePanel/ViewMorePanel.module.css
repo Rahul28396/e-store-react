@@ -14,3 +14,10 @@
 .panel-content{
     font-size: 1rem;
 }
+
+.panel-footer{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center;
+}
