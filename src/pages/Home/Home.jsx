@@ -10,7 +10,7 @@ import { BsCamera } from "react-icons/bs";
 import { RiComputerLine } from "react-icons/ri";
 import { ImHeadphones } from "react-icons/im";
 import { IoGameControllerSharp } from "react-icons/io5";
-import Carousel from "../../components/UI/carousel/carousel";
+import Carousel from "../../components/UI/Carousel/Carousel";
 
 const Home = () => {
   const { setTitle } = useTitle();
