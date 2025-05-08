@@ -11,6 +11,7 @@ import TitleContextProvider from './context/TitleConetxt.jsx';
 import ProductListing from './pages/ProductListingPage/ProductListing.jsx';
 import ProductDetails from './pages/ProductDetails/ProductDetails.jsx';
 import Cart from './pages/Cart/Cart.jsx';
+import Checkout from './pages/Checkout/Checkout.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: 'cart',
         element: <Cart />,
+      },
+      {
+        path: 'checkout',
+        element: <Checkout />,
       }
 
     ]

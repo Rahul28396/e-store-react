@@ -13,7 +13,7 @@
 }
 
 .cart-items-header {
-    margin: 0 0 10px 0;
+    margin: 0;
 }
 
 .cart-summary {
@@ -97,7 +97,7 @@
     }
 
     .cart-items-header {
-        margin: 0 0 0 20px;
+        margin: 0;
     }
 
     .cart-summary {
