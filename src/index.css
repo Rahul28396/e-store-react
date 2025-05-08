@@ -9,6 +9,12 @@
   --disabled-color: #cccccc;
   --border-color: #cccccc;
   --highlight-bg-color: #f9f9f9;
+    scrollbar-width: none;
+  /* Fallback for browsers that do not support scrollbar-width */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 [data-theme="dark"] {
@@ -122,4 +128,24 @@ select:focus {
 .btn-tertiary {
   background-color: transparent;
   color: var(--text-color);
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-thin {
+  font-weight: 100;
 }

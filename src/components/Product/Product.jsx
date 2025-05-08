@@ -17,7 +17,8 @@ const Product = ({ product, showFavIcon  }) => {
         </Link>
       </h2>
       <p className={styles.productPrice}>{price}</p>
-      <button className={styles.addToCartButton}>Add to Cart</button>
+      
+      {/* <button className={styles.addToCartButton}>Add to Cart</button> */}
     </div>
   );
 };

@@ -40,7 +40,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link to={"/"} className={styles.navIcon + " " + styles.navLink}>
+              <Link to={"cart"} className={styles.navIcon + " " + styles.navLink}>
                 <IoCartOutline size={20} />
               </Link>
             </li>
@@ -99,7 +99,7 @@ const Header = () => {
           </li>
           <li className={styles.popupNavItem}>
             <Link
-              to={"/"}
+              to={"cart"}
               className={styles.navIcon + " " + styles.popupNavLink}
             >
               <IoCartOutline size={20} />

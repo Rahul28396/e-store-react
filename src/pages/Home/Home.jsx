@@ -3,14 +3,14 @@ import Banner from "../../components/Banner/Banner";
 import BrowseByCategory from "../../widgets/BrowseByCategory/BrowseByCategory";
 import ProductsSection from "../../widgets/ProductsSection/ProductsSection";
 import ProductsWidget from "../../widgets/ProductWidget/ProductsWidget";
-import Footer from "../../components/Footer/Footer";
-import { TitleContext, useTitle } from "../../context/TitleConetxt";
+import { useTitle } from "../../context/TitleConetxt";
 import { CiMobile3 } from "react-icons/ci";
 import { BsSmartwatch } from "react-icons/bs";
 import { BsCamera } from "react-icons/bs";
 import { RiComputerLine } from "react-icons/ri";
 import { ImHeadphones } from "react-icons/im";
 import { IoGameControllerSharp } from "react-icons/io5";
+import Carousel from "../../components/UI/carousel/carousel";
 
 const Home = () => {
   const { setTitle } = useTitle();
@@ -37,7 +37,7 @@ const Home = () => {
 
   return (
     <>
-      <Banner
+      {/* <Banner
         title="Welcome to GadgetZone"
         subtitle="Your one-stop shop for everything!"
         imageUrl="banner1.jpg" // Replace with your image URL
@@ -46,7 +46,9 @@ const Home = () => {
         showButton={true}
         buttonText="Shop Now"
         onButtonClick={() => console.log("Shop Now button clicked!")}
-      />
+      /> */}
+      {/* Replace with your image URLs */}
+      <Carousel images={['banner1.jpg', 'banner2.jpg']} />
       <BrowseByCategory categories={categories}/>
       <ProductsSection />
       <ProductsWidget
