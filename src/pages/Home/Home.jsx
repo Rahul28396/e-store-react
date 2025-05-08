@@ -37,17 +37,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <Banner
-        title="Welcome to GadgetZone"
-        subtitle="Your one-stop shop for everything!"
-        imageUrl="banner1.jpg" // Replace with your image URL
-        isImageClickable={true}
-        onImageClick={() => console.log("Banner image clicked!")}
-        showButton={true}
-        buttonText="Shop Now"
-        onButtonClick={() => console.log("Shop Now button clicked!")}
-      /> */}
-      {/* Replace with your image URLs */}
       <Carousel images={['banner1.jpg', 'banner2.jpg']} />
       <BrowseByCategory categories={categories}/>
       <ProductsSection />
