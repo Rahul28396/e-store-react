@@ -53,7 +53,7 @@ const Cart = () => {
           ))}
         </div>
         <div className={styles["cart-summary"]}>
-          <h4 className={styles["cart-summary-header"]}>Order Summary</h4>
+          <h4 className={styles["cart-summary-header"]}>Price Details (3 Items)</h4>
           <div className={styles["promo"]}>
             <label
               className={styles["cart-summary-label"]}
@@ -68,33 +68,34 @@ const Cart = () => {
               placeholder="Enter promo code"
             />
           </div>
-          <div className={styles["gift"]}>
-            <label className={styles["cart-summary-label"]} htmlFor="gift-card">
-              Gift Card:
-            </label>
-            <input
-              className={styles["cart-summary-input"]}
-              type="text"
-              id="gift-card"
-              placeholder="Enter gift card code"
-            />
-          </div>
           <div className={styles["order-summary"]}>
             <p className={`${styles["order-summary-item"]} font-bold`}>
-              <span>Subtotal:</span>
-              <span>$99.97</span>
+              <span>Total MRP:</span>
+              <span>$100.00</span>
             </p>
             <p className={styles["order-summary-item"]}>
               <span>Tax:</span>
               <span>$0.00</span>
             </p>
             <p className={styles["order-summary-item"]}>
-              <span>Shipping:</span>
-              <span>$5.00</span>
+              <span>Discount on MRP:</span>
+              <span>$25.00</span>
+            </p>
+             <p className={styles["order-summary-item"]}>
+              <span>Coupon Discount:</span>
+              <span>$10.00</span>
+            </p>
+            <p className={`${styles["order-summary-item"]}`}>
+              <span>Platform Fee:</span>
+              <span>$2.00</span>
+            </p>
+            <p className={`${styles["order-summary-item"]}`}>
+              <span>Shipping Fee:</span>
+              <span>$3.00</span>
             </p>
             <p className={`${styles["order-summary-item"]} font-bold`}>
-              <span>Total:</span>
-              <span>$104.97</span>
+              <span>Total amount:</span>
+              <span>$60.00</span>
             </p>
           </div>
           <button className={styles["checkout-button"]} onClick={()=> navigate('/checkout')}>Checkout</button>
