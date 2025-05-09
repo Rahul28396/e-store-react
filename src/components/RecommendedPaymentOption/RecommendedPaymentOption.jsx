@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CardDetailsForm from "../CardDetailsForm/CardDetailsForm";
+import UPIOptions from "../UPIOptions/UPIOptions";
+import './RecommendedPaymentOption.css';
 
 const RecommendedPaymentOption = () => {
   const [selectedOption, setSelectedOption] = useState("PhonePe");
@@ -10,44 +12,38 @@ const RecommendedPaymentOption = () => {
 
   return (
     <div>
-      <div>
-        <label>
-          <input
-            type="radio"
-            value="PhonePe"
-            checked={selectedOption === "PhonePe"}
-            onChange={handleOptionChange}
-          />
-          PhonePe
-        </label>
-
-        {selectedOption === "PhonePe" && (
-          <form>
-            <h3>PhonePe Payment</h3>
-            <div>
-              <label>
-                PhonePe ID:
-                <input type="text" placeholder="Enter your PhonePe ID" />
-              </label>
-            </div>
-            <button type="submit">Pay with PhonePe</button>
-          </form>
-        )}
+      <div className="option">
+        <input
+          type="radio"
+          value="PhonePe"
+          checked={selectedOption === "PhonePe"}
+          onChange={handleOptionChange}
+        />
+        <label>UPI Options</label>
       </div>
 
-      <div>
-        <label>
-          <input
-            type="radio"
-            value="Card"
-            checked={selectedOption === "Card"}
-            onChange={handleOptionChange}
-          />
-          Card
-        </label>
-        {selectedOption === "Card" && <CardDetailsForm />}
-      </div>
       
+      {selectedOption === "PhonePe" && (
+        <section className="option-section">
+          <UPIOptions />
+        </section>
+      )}
+
+      <div className="option">
+        <input
+          type="radio"
+          value="Card"
+          checked={selectedOption === "Card"}
+          onChange={handleOptionChange}
+        />
+        <label>Card Options</label>
+      </div>
+
+      {selectedOption === "Card" && (
+        <section className="option-section">
+          <CardDetailsForm />
+        </section>
+      )}
     </div>
   );
 };

@@ -1,51 +1,40 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
 const UPIOptions = () => {
-    const [selectedOption, setSelectedOption] = useState('PhonePe');
-    const [upiId, setUpiId] = useState('');
+  const [upiId, setUpiId] = useState("");
 
-    const handleOptionChange = (option) => {
-        setSelectedOption(option);
-        setUpiId('');
-    };
+  const handlePay = () => {
+    alert(`Payment initiated with UPI ID: ${upiId}`);
+  };
 
-    const handlePay = () => {
-        alert(`Payment initiated with UPI ID: ${upiId}`);
-    };
-
-    return (
+  return (
+    <div>
+      <p>Pay by an UPI app</p>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handlePay();
+        }}
+        style={{ display: 'flex', flexDirection: 'column' , gap: '1rem', maxWidth: '380px'}}
+      >
         <div>
-            <div>
-                <button onClick={() => handleOptionChange('PhonePe')}>PhonePe</button>
-                <button onClick={() => handleOptionChange('Gpay')}>Gpay</button>
-                <button onClick={() => handleOptionChange('Paytm')}>Paytm</button>
-                <button onClick={() => handleOptionChange('UPI ID')}>UPI ID</button>
-            </div>
-
-            {selectedOption && (
-                <div style={{ marginTop: '20px' }}>
-                    <h3>{selectedOption} Payment</h3>
-                    <form
-                        onSubmit={(e) => {
-                            e.preventDefault();
-                            handlePay();
-                        }}
-                    >
-                        <label>
-                            UPI ID:
-                            <input
-                                type="text"
-                                value={upiId}
-                                onChange={(e) => setUpiId(e.target.value)}
-                                required
-                            />
-                        </label>
-                        <button type="submit">Pay</button>
-                    </form>
-                </div>
-            )}
+          <label>UPI ID:</label>
+          <div className="flex gap2">
+            <input
+              type="text"
+              placeholder="Enter your UPI ID"
+              value={upiId}
+              onChange={(e) => setUpiId(e.target.value)}
+              required
+            />
+            <button> Verify </button>
+          </div>
         </div>
-    );
+
+        <button type="submit">Pay</button>
+      </form>
+    </div>
+  );
 };
 
 export default UPIOptions;

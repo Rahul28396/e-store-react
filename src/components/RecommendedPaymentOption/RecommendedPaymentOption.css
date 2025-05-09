@@ -1,0 +1,13 @@
+.option{
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: larger;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.option-section{
+    padding: 0 34px;
+    margin-bottom: 1rem;
+}

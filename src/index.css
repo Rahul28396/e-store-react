@@ -253,3 +253,11 @@ label {
 .mb10{
   margin-bottom: 10px;
 }
+
+.flex{
+  display: flex;
+}
+
+.gap2{
+  gap: 1rem;
+}

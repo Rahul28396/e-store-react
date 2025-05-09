@@ -17,6 +17,7 @@ const CartSummary = () => {
         setNext("/");
         break;
       default:
+        setNext('address');
         break;
     }
   }, [pathname])
