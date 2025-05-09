@@ -56,7 +56,7 @@ const Header = () => {
 
           <ul className={styles.mobileNavList}>
             <li className={styles.navItem}>
-              <Link to={"/"} className={styles.navIcon + " " + styles.navLink}>
+              <Link to={"/checkout"} className={styles.navIcon + " " + styles.navLink}>
                 <IoCartOutline size={20} />
               </Link>
             </li>

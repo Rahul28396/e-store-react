@@ -8,7 +8,7 @@ import RecommendedPaymentOption from "../RecommendedPaymentOption/RecommendedPay
 const Payment = () => {
 
   return (
-    <div>
+    <>
       <h3>Payment Options</h3>
       <TabProvider value={1}>
         <TabProvider.TabList>
@@ -30,7 +30,7 @@ const Payment = () => {
             <CardDetailsForm />
         </TabProvider.TabPanel>
       </TabProvider>
-    </div>
+    </>
   );
 };
 
