@@ -4,13 +4,10 @@
 .cart-container {
     display: flex;
     flex-direction: column;
-    margin: 20px 0;
-    padding: 10px 0;
 }
 
 .cart-items {
     margin-bottom: 20px;
-    /* border: 1px solid var(--border-color); */
 }
 
 .cart-items-header {
