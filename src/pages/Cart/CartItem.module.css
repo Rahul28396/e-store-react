@@ -1,36 +1,48 @@
 .cart-item {
     display: flex;
     align-items: flex-start;
-    border-bottom: var(--border-color) 1px solid;
-    padding: 20px;
-    gap: 10px;
+    gap: 24px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
 }
 
-.cart-item:last-of-type {
-    border-bottom: 0;
+.cart-item-remove {
+    margin-left: auto;
+    position: relative;
 }
 
 .cart-item-image {
-    width: 60px;
-    height: 60px;
-    margin-right: 0;
+    width: 80px;
+    height: 80px;
 }
 
 .cart-item-details {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
     flex: 1;
 }
 
 .cart-item-name {
     font-size: 1rem;
-    font-weight: bold;
-    width: 100%;
+    margin: 0 0 10px 0;
 }
 
 .cart-item-price {
-    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: smaller;
+    margin: 0 0 10px 0;
+}
+
+.cart-item-price-off {
+    text-decoration: line-through;
+}
+
+.cart-item-price-discount {
+    color: #14961d;
 }
 
 .cart-item-quantity {
@@ -39,7 +51,8 @@
     gap: 10px;
 }
 
-.quantity-btn {
+.quantity-btn,
+.remove-button {
     background-color: var(--background-color);
     color: var(--text-color);
     padding: 5px 10px;
@@ -48,54 +61,30 @@
     cursor: pointer;
 }
 
+.quantity-btn {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.remove-button {
+    padding: 4px;
+}
+
+.remove-button:hover {
+    color: #ff1a1a;
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
 .quantity-count {
     font-size: 1rem;
     font-weight: bold;
 }
 
-.remove-button {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.remove-button:hover {
-    background-color: #ff1a1a;
-}
-
-/* Media query for tablets and larger screens */
-@media (min-width: 768px) {
-    .cart-item {
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
-    }
-
+@media screen and (min-width: 768px) {
     .cart-item-image {
-        width: 80px;
-        height: 80px;
-        margin-right: 20px;
-    }
-
-    .cart-item-details {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .cart-item-name {
-        font-size: medium;
-        width: 200px;
-    }
-
-    .cart-item-price {
-        font-size: 1.2rem;
-    }
-
-    .quantity-count {
-        font-size: 1.2rem;
+        width: 100px;
+        height: 100px;
     }
 }

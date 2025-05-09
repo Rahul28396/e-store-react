@@ -31,7 +31,10 @@ const Cart = () => {
     <div className="container">
       <div className={styles["cart-container"]}>
         <div className={styles["cart-items"]}>
-          <h2 className={styles["cart-items-header"]}>Items in your cart</h2>
+          <div className={styles["cart-items-header"]}>
+            <h2 className={styles["cart-items-title"]}>Cart Items (3)</h2>
+            <button className={styles["clear-cart-button"]}>CLEAR CART</button>
+          </div>
 
           {cartProducts.map((product) => (
             <CartItem
