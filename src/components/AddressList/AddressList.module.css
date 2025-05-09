@@ -1,0 +1,56 @@
+.address-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.address-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-color);
+    margin-bottom: 12px;
+    gap: 16px;
+}
+
+.address-item-info p {
+    margin: 0 0 8px 0;
+}
+
+.address-item-info h3 {
+    margin: 0 0 8px 0;
+}
+
+.address-item-action {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+}
+
+.address-item-action button{
+    display: flex;
+    align-items:center;
+    width: 120px;
+    gap:4px;
+    justify-content: center;
+}
+
+.cart-items-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.cart-items-title{
+    font-size: larger;
+    margin: 0;
+}
+
+.clear-cart-button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+}

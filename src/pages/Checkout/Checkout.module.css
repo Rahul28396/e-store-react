@@ -1,0 +1,22 @@
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-content{
+    width: 100%;
+}
+
+/* Larger screens (tablet and above) */
+@media (min-width: 768px) {
+    .checkout-container {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+
+    .checkout-content{
+        width: 60%;
+    }
+}

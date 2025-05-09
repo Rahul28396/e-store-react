@@ -10,8 +10,10 @@ import Home from './pages/Home/Home.jsx';
 import TitleContextProvider from './context/TitleConetxt.jsx';
 import ProductListing from './pages/ProductListingPage/ProductListing.jsx';
 import ProductDetails from './pages/ProductDetails/ProductDetails.jsx';
-import Cart from './pages/Cart/Cart.jsx';
 import Checkout from './pages/Checkout/Checkout.jsx';
+import CartItemList from './components/CartItemList/CartItemList.jsx';
+import AddressList from './components/AddressList/AddressList.jsx';
+import Payment from './components/Payment/Payment.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,12 +35,22 @@ const router = createBrowserRouter([
         element: <ProductDetails />,
       },
       {
-        path: 'cart',
-        element: <Cart />,
-      },
-      {
         path: 'checkout',
         element: <Checkout />,
+        children: [
+          {
+            path: '',
+            element: <CartItemList />
+          },
+          {
+            path: 'address',
+            element: <AddressList />
+          },
+          {
+            path: 'payment',
+            element: <Payment />
+          }
+        ]
       }
 
     ]

@@ -40,7 +40,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.navItem}>
-              <Link to={"cart"} className={styles.navIcon + " " + styles.navLink}>
+              <Link to={"/checkout"} className={styles.navIcon + " " + styles.navLink}>
                 <IoCartOutline size={20} />
               </Link>
             </li>

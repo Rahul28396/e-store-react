@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ImCancelCircle } from "react-icons/im";
+import { useState } from "react";
+import { MdClear } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa";
 
@@ -60,7 +60,7 @@ const CartItem = ({ product, onRemove, onUpdateQuantity }) => {
 
       <div className={styles["cart-item-remove"]}>
         <button onClick={handleRemove} className={styles["remove-button"]}>
-          <ImCancelCircle size={20} />
+          <MdClear size={20} />
         </button>
       </div>
     </div>

@@ -1,0 +1,34 @@
+.cart-items-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.cart-items-title{
+    font-size: larger;
+    margin: 0;
+}
+
+.clear-cart-button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+}
+
+/* Larger screens (tablet and above) */
+@media (min-width: 768px) {
+    .cart-items {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    .cart-summary {
+        padding: 0 30px;
+        width: 30%;
+    }
+
+    .summary-details {
+        margin-bottom: 20px;
+    }
+}

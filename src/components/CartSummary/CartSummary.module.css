@@ -1,41 +1,6 @@
-/* Cart.module.css */
-/* Mobile-first responsive styles for the cart page of an e-commerce application. */
-
-.cart-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.cart-items {
-    margin-bottom: 20px;
-}
-
-.cart-items-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
-}
-
-.cart-items-title{
-    font-size: larger;
-    margin: 0 0 24px 0;
-}
-
-.clear-cart-button{
-    padding: 4px 8px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    background-color: var(--background-color);
-}
-
-.clear-cart-button:hover{
-    background-color: var(--hover-color);
-}
-
 .cart-summary {
     display: flex;
     flex-direction: column;
-    border-left: 1px solid var(--border-color);
 }
 
 .cart-summary-header{
@@ -47,17 +12,12 @@
 }
 
 .checkout-button {
-    background-color: #28a745;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-}
-
-.checkout-button:hover {
-    background-color: #218838;
 }
 
 .promo, .gift{
@@ -101,24 +61,11 @@
 
 /* Larger screens (tablet and above) */
 @media (min-width: 768px) {
-    .cart-container {
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 50px 0;
-        padding: 20px 0;
-        flex-wrap: wrap;
-    }
-
-    .cart-items {
-        flex: 1;
-        margin-right: 30px;
-        margin-bottom: 0;
-        width: 70%;
-    }
-
+    
     .cart-summary {
         padding: 0 30px;
         width: 30%;
+        border-left: 1px solid var(--border-color);
     }
 
     .summary-details {
