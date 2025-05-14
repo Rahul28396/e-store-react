@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --bg-color: white;
   --text-color: #1e1e1e;
@@ -9,7 +13,7 @@
   --disabled-color: #cccccc;
   --border-color: #cccccc;
   --highlight-bg-color: #f9f9f9;
-  scrollbar-width: none;
+    scrollbar-width: none;
 
   /* Fallback for browsers that do not support scrollbar-width */
   &::-webkit-scrollbar {

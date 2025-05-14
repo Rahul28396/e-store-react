@@ -14,6 +14,8 @@ import Checkout from './pages/Checkout/Checkout.jsx';
 import CartItemList from './components/CartItemList/CartItemList.jsx';
 import AddressList from './components/AddressList/AddressList.jsx';
 import Payment from './components/Payment/Payment.jsx';
+import Login from './pages/Login/Login.jsx';
+import SignUpPage from './pages/Signup/Signup.jsx';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
             element: <Payment />
           }
         ]
+      },
+      {
+        path: 'login',
+        element: <Login />
+      },
+      {
+        path: 'signup',
+        element: <SignUpPage />
       }
 
     ]

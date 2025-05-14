@@ -1,0 +1,138 @@
+.login-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.login-image {
+    display: none;
+}
+
+.login-form-section {
+    width: 100%;
+    padding: 32px;
+}
+
+.login-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.login-desc {
+    margin-bottom: 32px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.login-label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-top: 4px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.login-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px #bfdbfe;
+}
+
+.login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login-checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.login-checkbox {
+    margin-right: 8px;
+}
+
+.login-link {
+    font-size: 0.95rem;
+    color: #2563eb;
+    text-decoration: none;
+    transition: text-decoration 0.2s;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    background: #2563eb;
+    padding: 14px 0;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-btn:hover {
+    background: #1d4ed8;
+}
+
+.login-footer {
+    margin-top: 24px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.login-footer-link {
+    color: #2563eb;
+    text-decoration: none;
+    transition: text-decoration 0.2s;
+}
+
+.login-footer-link:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .login-image {
+        display: block;
+        width: 50%;
+    }
+
+    .login-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .login-form-section {
+        width: 50%;
+    }
+}
+
+@media (min-width: 640px) {
+    .login-form-section {
+        padding: 48px;
+    }
+}
