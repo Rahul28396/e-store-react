@@ -3,34 +3,36 @@ const CashOnDeliveryForm = () => {
     <>
       <p>
         <span className="font-bold">Note: </span>
-        Please ensure your card can be used for online transactions. 
+        Please ensure your card can be used for online transactions.
         <a>Learn more</a>
       </p>
       <form>
-        <div className="col-12 mb10">
-          <label htmlFor="cardNumber">Card Number:</label>
-          <input
-            type="text"
-            id="cardNumber"
-            name="cardNumber"
-            placeholder="1234 5678 9012 3456"
-            required
-          />
-        </div>
+        <div className="row mb10">
+          <div className="col-3">
+            <label htmlFor="cardNumber">Card Number:</label>
+            <input
+              type="text"
+              id="cardNumber"
+              name="cardNumber"
+              placeholder="1234 5678 9012 3456"
+              required
+            />
+          </div>
 
-        <div className="col-12 mb10">
-          <label htmlFor="cardHolderName">Cardholder Name:</label>
-          <input
-            type="text"
-            id="cardHolderName"
-            name="cardHolderName"
-            placeholder="John Doe"
-            required
-          />
+          <div className="col-3">
+            <label htmlFor="cardHolderName">Cardholder Name:</label>
+            <input
+              type="text"
+              id="cardHolderName"
+              name="cardHolderName"
+              placeholder="John Doe"
+              required
+            />
+          </div>
         </div>
 
         <div className="row mb10">
-          <div className="col-5 mr6rem">
+          <div className="col-3">
             <label htmlFor="expiryDate">Expiry Date:</label>
             <input
               type="text"
@@ -40,7 +42,7 @@ const CashOnDeliveryForm = () => {
               required
             />
           </div>
-          <div className="col-5 mb1rem">
+          <div className="col-3">
             <label htmlFor="cvv">CVV:</label>
             <input
               type="password"

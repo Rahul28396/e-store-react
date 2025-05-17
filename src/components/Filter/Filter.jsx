@@ -1,5 +1,6 @@
 import React from "react";
 import { AccordianProvider } from "../../components/UI/Accordian/AccordianContext";
+import styles from './Filter.module.css';
 
 const Filter = ({classes}) => {
   return (
@@ -7,7 +8,7 @@ const Filter = ({classes}) => {
       <AccordianProvider value={"Brands"}>
         <AccordianProvider.Container>
           <AccordianProvider.Item title="Brands">
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="brand1"
@@ -16,7 +17,7 @@ const Filter = ({classes}) => {
               />
               <label htmlFor="brand1">Brand 1</label>
             </div>
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="brand2"
@@ -25,7 +26,7 @@ const Filter = ({classes}) => {
               />
               <label htmlFor="brand2">Brand 2</label>
             </div>
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="brand3"
@@ -36,7 +37,7 @@ const Filter = ({classes}) => {
             </div>
           </AccordianProvider.Item>
           <AccordianProvider.Item title="Price Range">
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="price1"
@@ -45,7 +46,7 @@ const Filter = ({classes}) => {
               />
               <label htmlFor="price1">$0 - $50</label>
             </div>
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="price2"
@@ -54,7 +55,7 @@ const Filter = ({classes}) => {
               />
               <label htmlFor="price2">$50 - $100</label>
             </div>
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="price3"
@@ -65,7 +66,7 @@ const Filter = ({classes}) => {
             </div>
           </AccordianProvider.Item>
           <AccordianProvider.Item title="Ratings">
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="rating1"
@@ -74,7 +75,7 @@ const Filter = ({classes}) => {
               />
               <label htmlFor="rating1">1 Star & Up</label>
             </div>
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="rating2"
@@ -83,7 +84,7 @@ const Filter = ({classes}) => {
               />
               <label htmlFor="rating2">2 Stars & Up</label>
             </div>
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="rating3"
@@ -92,7 +93,7 @@ const Filter = ({classes}) => {
               />
               <label htmlFor="rating3">3 Stars & Up</label>
             </div>
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="rating4"
@@ -103,7 +104,7 @@ const Filter = ({classes}) => {
             </div>
           </AccordianProvider.Item>
           <AccordianProvider.Item title="Availability">
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="available"
@@ -112,7 +113,7 @@ const Filter = ({classes}) => {
               />
               <label htmlFor="available">In Stock</label>
             </div>
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="outOfStock"
@@ -123,7 +124,7 @@ const Filter = ({classes}) => {
             </div>
           </AccordianProvider.Item>
           <AccordianProvider.Item title="Discount">
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="discount1"
@@ -132,7 +133,7 @@ const Filter = ({classes}) => {
               />
               <label htmlFor="discount1">10% & Up</label>
             </div>
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="discount2"
@@ -141,7 +142,7 @@ const Filter = ({classes}) => {
               />
               <label htmlFor="discount2">20% & Up</label>
             </div>
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="discount3"
@@ -150,7 +151,7 @@ const Filter = ({classes}) => {
               />
               <label htmlFor="discount3">30% & Up</label>
             </div>
-            <div className="filterItem">
+            <div className={styles.filterItem}>
               <input
                 type="checkbox"
                 id="discount4"
