@@ -9,6 +9,7 @@ import { VscSettings } from "react-icons/vsc";
 import FilterInMobileView from "../../components/FilterInMobileView/FilterInMobileView";
 import Pagination from "../../components/UI/Pagination/Pagination";
 import { useTitle } from "../../context/TitleConetxt";
+import Dropdown from "../../components/UI/Dropdown/Dropdown";
 
 const ProductListing = () => {
   const { category } = useParams();
@@ -132,6 +133,21 @@ const ProductListing = () => {
     setTitle(category.charAt(0).toUpperCase() + category.slice(1));
   }, [category, setTitle]);
 
+  const options = [
+    {
+      label: 'Popularity',
+      value: 'popularity'
+    },
+    {
+      label: 'Price: High to low',
+      value: 'priceHighToLow'
+    },
+    {
+      label: 'Price: Low to high',
+      value: 'priceLowToHigh'
+    }
+  ]
+
   return (
     <section className="container">
       {!isFilterModalOpen && (
@@ -158,12 +174,17 @@ const ProductListing = () => {
                 </span>
                 <div className={styles.sortfileterContainer}>
                   <div className={styles.sortOptions}>
-                    <select id="sort" name="sort">
-                      <option value="popularity">By Popularity</option>
-                      <option value="priceLowToHigh">Price: Low to High</option>
-                      <option value="priceHighToLow">Price: High to Low</option>
-                      <option value="newest">Newest Arrivals</option>
-                    </select>
+                    <Dropdown>
+                      <Dropdown.Trigger>
+                          Sort Products
+                      </Dropdown.Trigger>
+                      <Dropdown.Menu>
+                        {
+                          options.map(option =>  <Dropdown.Item option={option}/>)
+                        }
+                       
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </div>
                   <div className={styles.filtersInMobileView}>
                     <button

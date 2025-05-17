@@ -1,11 +1,11 @@
 .productCard {
-    max-width: 300px;
+    max-width: 350px;
     height: auto;
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     padding: 8px 8px 16px;
-    box-shadow: var(--box-shadow);
+    /* box-shadow: var(--box-shadow); */
 }
 
 .productCard:hover {
