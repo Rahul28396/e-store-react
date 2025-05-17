@@ -1,0 +1,27 @@
+.overlay-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align children (trigger & content) to the right */
+    justify-content: center;
+}
+
+.overlay-trigger{
+    color: var(--text-color);
+}
+
+.overlay-trigger:hover {
+    border-bottom: 4px solid blue;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    z-index: 1000;
+    background: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: var(--box-shadow);
+    padding: 8px 16px;
+    min-width: 160px;
+}

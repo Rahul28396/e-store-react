@@ -1,0 +1,43 @@
+.header{
+    margin: 0;
+}
+
+.popupNavList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 4rem;
+    margin-left: 1rem;
+}
+
+.popupNavLink {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color); 
+}
+
+.popupNavLink:hover {
+    color: var(--text-color); 
+    font-weight: 600;
+}
+
+.popupNavLink.active {
+    color: var(--text-color); 
+    font-weight: 600;
+}
+
+.popupNavLink.active:hover {
+    color: var(--text-color);
+    font-weight: 600;
+    transform: rotate(-20deg);
+}
+
+.footer{
+    position: absolute;
+    bottom: 3rem;
+}

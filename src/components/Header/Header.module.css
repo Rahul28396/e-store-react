@@ -34,17 +34,18 @@
 }
 
 .searchContainer {
-    display: block;
+    display: none;
 }
 
 .navList {
-    display: flex;
-    gap: 3rem; /* Relative unit for gap */
+    display: none;
+    gap: 2rem; /* Relative unit for gap */
     list-style: none;
     text-decoration: none;
     color: rgb(36, 34, 34);
     font-weight: 500;
     align-items: center;
+    padding: 0;
 }
 
 .navLink {
@@ -83,48 +84,13 @@
     font-size:xx-large ;
 }
 
-.popupNavList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 2rem; /* Relative unit for gap */
-    margin-top: 6rem;
-    align-items: center;
+.overlay-content-top{
+    top: 2.7rem !important;
 }
 
-.popupNavLink {
-    text-decoration: none;
-    color: var(--text-color); /* White color for popup links */
-    /* font-size: x-large;  */
-    /* font-weight: 500; */
-}
-
-.popupNavLink:hover {
-    color: var(--text-color); /* Darker color on hover */
-    font-weight: 600;
-    transform: rotate(-20deg);
-}
-
-.popupNavLink.active {
-    color: var(--text-color); /* Active link color */
-    font-weight: 600;
-}
-
-.popupNavLink.active:hover {
-    color: var(--text-color); /* Active link hover color */
-    font-weight: 600;
-    transform: rotate(-20deg);
-}
-
-.mobileNavList{
-    display: none;
-}
-
-@media (max-width: 768px) { /* Keeping media query breakpoint consistent */
+@media (max-width: 768px) {
     .header {
-        padding: 1rem; /* Adjusted padding for smaller screens */
+        padding: 1rem;
         justify-content: space-between;
     }
 
@@ -136,52 +102,14 @@
         display: contents;
         color: var(--text-color);
     }
-
-    .mobileNavList {
-        display: flex;
-        gap: 2rem; /* Relative unit for gap */
-        list-style: none;
-        text-decoration: none;
-        color: var(--text-color);
-        font-weight: 500;
-        padding: 0.5rem 1rem; /* Relative units for padding */
-        align-items: center;
-        margin: 0;
-    }
-
 }
 
-@media (max-width: 1000px) {
+@media (min-width: 768px) {
     .searchContainer {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .header {
-        padding: 1rem; /* Adjusted padding for smaller screens */
-        justify-content: space-between;
+        display: contents;
     }
 
     .navList {
-        display: none;
-    } 
-
-    .hamburgerMenu {
-        display: contents;
-        color: var(--text-color);
-    }
-
-    .mobileNavList {
         display: flex;
-        gap: 2rem; /* Relative unit for gap */
-        list-style: none;
-        text-decoration: none;
-        color: var(--text-color);
-        font-weight: 500;
-        padding: 0.5rem 1rem; /* Relative units for padding */
-        align-items: center;
-        margin: 0;
-    }
-    
+    } 
 }

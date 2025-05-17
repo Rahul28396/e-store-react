@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
-
+const w_2 = {width: '50%'}
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -15,7 +15,7 @@ const Footer = () => {
           </p>
         </div>
         <div className={styles.footerLinks}>
-          <div>
+          <div style={w_2}>
             <h3>Shop With Us</h3>
             <ul>
               <li className={styles.footerLink}>
@@ -38,7 +38,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+          <div style={w_2}>
             <h3>Support</h3>
             <ul>
               <li className={styles.footerLink}>
