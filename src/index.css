@@ -13,7 +13,7 @@
   --disabled-color: #cccccc;
   --border-color: #cccccc;
   --highlight-bg-color: #f9f9f9;
-    scrollbar-width: none;
+  scrollbar-width: none;
 
   /* Fallback for browsers that do not support scrollbar-width */
   &::-webkit-scrollbar {
@@ -250,18 +250,23 @@ label {
   margin-right: 6rem;
 }
 
-.mb1rem{
+.mb1rem {
   margin-bottom: 1rem;
 }
 
-.mb10{
+.mb10 {
   margin-bottom: 10px;
 }
 
-.flex{
+.flex {
   display: flex;
 }
 
-.gap2{
+.gap2 {
   gap: 1rem;
+}
+
+.common-container {
+  max-width: 1200px;
+  margin: auto;
 }

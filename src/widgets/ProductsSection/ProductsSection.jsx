@@ -203,8 +203,11 @@ export default function ProductsSection() {
     },
   ];
 
+  const container = "common-container"
+
   return (
-    <section className={styles["productsSection"]}>
+    
+    <section className={`${styles.productsSection} ${container}`}>
       <TabProvider value={1}>
         <TabProvider.TabList>
           <Tab index={1}>New Arrivals</Tab>

@@ -2,8 +2,9 @@ import styles from "./PanelWithHeader.module.css";
 import { GrNext } from "react-icons/gr";
 
 const PanelWithHeader = ({ title, onClickViewAll, children }) => {
+  const container = "common-container"
   return (
-    <section className={styles.PanelWithHeader}>
+    <section className={`${styles.PanelWithHeader} ${container}`}>
       <div className={styles.header}>
         <h2 className={styles.title}>{title}</h2>
         <div className={styles.navigation}>

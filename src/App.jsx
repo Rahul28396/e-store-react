@@ -3,6 +3,8 @@ import Header from "./components/Header/Header";
 import { Outlet } from "react-router";
 import ThemeProvider, { useTheme } from "./context/ThemeContext";
 import Footer from "./components/Footer/Footer";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 function AppContent() {
   const { theme } = useTheme();
@@ -18,9 +20,11 @@ function AppContent() {
 
 function App() {
   return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
+    </Provider>
   );
 }
 

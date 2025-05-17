@@ -59,7 +59,7 @@ const MobileNav = ({ closeSideBar }) => {
         </li>
         <li className={styles.popupNavItem}>
           <Link
-            to={"cart"}
+            to={"checkout"}
             className={styles.navIcon + " " + styles.popupNavLink}
             onClick={handleLinkClick}
           >
