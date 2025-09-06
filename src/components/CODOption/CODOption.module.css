@@ -1,0 +1,359 @@
+/* Material UI Inspired COD Option */
+.codContainer {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.codHeader {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.headerIcon {
+    font-size: 2rem;
+    color: #4caf50;
+    margin-bottom: 12px;
+}
+
+.codHeader h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 8px 0;
+}
+
+.codHeader p {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+}
+
+.codFeatures {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.featureItem:hover {
+    border-color: #4caf50;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
+}
+
+.featureIcon {
+    width: 48px;
+    height: 48px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #4caf50;
+    flex-shrink: 0;
+}
+
+.featureContent h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 4px 0;
+}
+
+.featureContent p {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+}
+
+.codInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.infoCard {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.infoCard h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 16px 0;
+}
+
+.chargeDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chargeItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.chargeItemTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.notesList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.notesList li {
+    font-size: 0.875rem;
+    color: #666;
+    padding-left: 16px;
+    position: relative;
+}
+
+.notesList li::before {
+    content: "•";
+    color: #4caf50;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.codActions {
+    text-align: center;
+}
+
+.placeOrderButton {
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 auto 16px auto;
+    min-width: 200px;
+}
+
+.placeOrderButton:hover:not(:disabled) {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(76, 175, 80, 0.4);
+}
+
+.placeOrderButton:disabled {
+    background: #81c784;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.buttonIcon {
+    font-size: 0.875rem;
+}
+
+.confirmationText {
+    font-size: 0.875rem;
+    color: #4caf50;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .codContainer {
+        max-width: 100%;
+    }
+
+    .codHeader {
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+    }
+
+    .headerIcon {
+        font-size: 1.75rem;
+        margin-bottom: 8px;
+    }
+
+    .codHeader h3 {
+        font-size: 1.25rem;
+    }
+
+    .codHeader p {
+        font-size: 0.8125rem;
+    }
+
+    .codFeatures {
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .featureItem {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .featureIcon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .featureContent h4 {
+        font-size: 0.9rem;
+    }
+
+    .featureContent p {
+        font-size: 0.8125rem;
+    }
+
+    .codInfo {
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .infoCard {
+        padding: 16px;
+    }
+
+    .infoCard h4 {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    .chargeItem {
+        font-size: 0.8125rem;
+    }
+
+    .chargeItemTotal {
+        font-size: 0.9rem;
+    }
+
+    .notesList li {
+        font-size: 0.8125rem;
+    }
+
+    .placeOrderButton {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+        min-width: 180px;
+    }
+
+    .confirmationText {
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .codHeader {
+        margin-bottom: 20px;
+    }
+
+    .headerIcon {
+        font-size: 1.5rem;
+    }
+
+    .codHeader h3 {
+        font-size: 1.125rem;
+    }
+
+    .codFeatures {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .featureItem {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .featureIcon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.875rem;
+    }
+
+    .featureContent h4 {
+        font-size: 0.875rem;
+    }
+
+    .featureContent p {
+        font-size: 0.75rem;
+    }
+
+    .codInfo {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .infoCard {
+        padding: 12px;
+    }
+
+    .infoCard h4 {
+        font-size: 0.875rem;
+        margin-bottom: 10px;
+    }
+
+    .chargeItem {
+        font-size: 0.75rem;
+    }
+
+    .chargeItemTotal {
+        font-size: 0.875rem;
+    }
+
+    .notesList li {
+        font-size: 0.75rem;
+    }
+
+    .placeOrderButton {
+        padding: 12px 20px;
+        font-size: 0.875rem;
+        min-width: 160px;
+    }
+
+    .confirmationText {
+        font-size: 0.75rem;
+    }
+}
+

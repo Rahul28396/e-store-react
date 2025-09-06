@@ -1,0 +1,219 @@
+/* Material UI Inspired Card Details Form */
+.cardFormContainer {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.formHeader {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.headerIcon {
+    font-size: 2rem;
+    color: #1976d2;
+    margin-bottom: 12px;
+}
+
+.formHeader h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 8px 0;
+}
+
+.formHeader p {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+}
+
+.cardForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.labelIcon {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.input {
+    padding: 12px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background: white;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.input::placeholder {
+    color: #999;
+}
+
+.inputError {
+    border-color: #f44336;
+    box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.1);
+}
+
+.errorText {
+    font-size: 0.75rem;
+    color: #f44336;
+    margin-top: 4px;
+}
+
+.securityNote {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #4caf50;
+    margin: 8px 0;
+}
+
+.securityIcon {
+    font-size: 0.875rem;
+    color: #4caf50;
+}
+
+.submitButton {
+    background: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+}
+
+.submitButton:hover {
+    background: #1565c0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.4);
+}
+
+.submitButton:active {
+    transform: translateY(0);
+}
+
+.buttonIcon {
+    font-size: 0.875rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .cardFormContainer {
+        max-width: 100%;
+    }
+
+    .formHeader {
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+    }
+
+    .headerIcon {
+        font-size: 1.75rem;
+        margin-bottom: 8px;
+    }
+
+    .formHeader h3 {
+        font-size: 1.25rem;
+    }
+
+    .formHeader p {
+        font-size: 0.8125rem;
+    }
+
+    .cardForm {
+        gap: 16px;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .input {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .submitButton {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .formHeader {
+        margin-bottom: 20px;
+    }
+
+    .headerIcon {
+        font-size: 1.5rem;
+    }
+
+    .formHeader h3 {
+        font-size: 1.125rem;
+    }
+
+    .cardForm {
+        gap: 14px;
+    }
+
+    .input {
+        padding: 8px 10px;
+        font-size: 0.875rem;
+    }
+
+    .submitButton {
+        padding: 12px 16px;
+        font-size: 0.875rem;
+    }
+}
+

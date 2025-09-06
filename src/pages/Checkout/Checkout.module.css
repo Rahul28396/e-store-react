@@ -1,22 +1,44 @@
+/* Material UI Inspired Checkout Layout */
 .checkout-container {
     display: flex;
     flex-direction: column;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: transparent;
+    min-height: calc(100vh - 200px);
 }
 
-.checkout-content{
+.checkout-content {
     width: 100%;
+    background: transparent;
 }
 
-/* Larger screens (tablet and above) */
+/* Desktop Layout */
 @media (min-width: 768px) {
     .checkout-container {
         flex-direction: row;
-        justify-content: space-between;
-        margin: 30px 0;
-        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 32px;
+        padding: 32px;
+        background: transparent;
     }
 
-    .checkout-content{
-        width: 60%;
+    .checkout-content {
+        flex: 1;
+        max-width: calc(100% - 400px);
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1024px) {
+    .checkout-container {
+        gap: 40px;
+        padding: 40px;
+    }
+    
+    .checkout-content {
+        max-width: calc(100% - 450px);
     }
 }

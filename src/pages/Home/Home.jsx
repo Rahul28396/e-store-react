@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import Banner from "../../components/Banner/Banner";
 import BrowseByCategory from "../../widgets/BrowseByCategory/BrowseByCategory";
 import ProductsSection from "../../widgets/ProductsSection/ProductsSection";
 import ProductsWidget from "../../widgets/ProductWidget/ProductsWidget";
+import Testimonials from "../../components/Testimonials/Testimonials";
+import Newsletter from "../../components/Newsletter/Newsletter";
 import { useTitle } from "../../context/TitleConetxt";
 import { CiMobile3 } from "react-icons/ci";
 import { BsSmartwatch } from "react-icons/bs";
@@ -38,6 +39,7 @@ const Home = () => {
   return (
     <>
       <Carousel images={['banner1.jpg', 'banner2.jpg']} />
+      {/* <StatsSection /> */}
       <BrowseByCategory categories={categories}/>
       <ProductsSection />
       <ProductsWidget
@@ -45,12 +47,8 @@ const Home = () => {
         onClickViewAll={() => console.log("View all")}
         products={productsWithDiscount}
       />
-      <Banner
-        imageUrl="banner2.jpg" // Replace with your image URL
-        isImageClickable={true}
-        onImageClick={() => console.log("Banner image clicked!")}
-        showButton={false}
-      />
+      <Testimonials />
+      <Newsletter />
     </>
   );
 };

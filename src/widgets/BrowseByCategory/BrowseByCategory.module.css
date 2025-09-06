@@ -45,26 +45,67 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 1rem;
-    background-color: var(--bg-color);
-    height: 90px;
-    min-width: 140px;
-    box-shadow: var(--box-shadow);
-    padding: 1rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+    height: 120px;
+    min-width: 160px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.category-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.category-item:hover::before {
+    opacity: 0.1;
+}
+
+.category-item span {
+    position: relative;
+    z-index: 1;
+    color: #667eea;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.category-item:hover span {
+    color: #764ba2;
+    transform: scale(1.1);
 }
 
 .title {
-    color: var(--text-color);
+    color: #333;
     text-align: center;
     margin: 0;
-    font-size: medium;
-    font-weight: 400;
+    font-size: 0.9rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.category-item:hover .title {
+    color: #667eea;
 }
 
 .category-item:hover {
-    transform: scale(1.05);
-    transition: transform 0.2s ease-in-out;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
     cursor: pointer;
 }
 

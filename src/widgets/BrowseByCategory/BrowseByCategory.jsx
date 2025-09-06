@@ -22,7 +22,7 @@ const BrowseByCategory = ({ categories }) => {
               className={styles["category-item"]}
             >
               <span>
-                <Icon size={30} />
+                <Icon size={40} />
               </span>
               <h3 className={styles.title}>{category.title}</h3>
             </Link>

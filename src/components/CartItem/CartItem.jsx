@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { MdClear } from "react-icons/md";
-import { FaPlus } from "react-icons/fa6";
-import { FaMinus } from "react-icons/fa";
-
+import { MdClear, MdDeleteOutline } from "react-icons/md";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import { Link } from "react-router";
 import styles from "./CartItem.module.css";
 
 const CartItem = ({ product, onRemove, onUpdateQuantity }) => {
@@ -26,41 +25,57 @@ const CartItem = ({ product, onRemove, onUpdateQuantity }) => {
     onRemove(product.id);
   };
 
+  const originalPrice = product.originalPrice || (product.price * 1.2);
+  const discount = Math.round(((originalPrice - product.price) / originalPrice) * 100);
+
   return (
-    <div className={styles["cart-item"]}>
-      <img
-        src={product.image}
-        alt={product.name}
-        className={styles["cart-item-image"]}
-      />
+    <div className={styles.cartItem}>
+      <div className={styles.imageContainer}>
+        <img
+          src={product.image}
+          alt={product.name}
+          className={styles.cartItemImage}
+        />
+      </div>
 
-      <div className={styles["cart-item-details"]}>
-        <p className={styles["cart-item-name"]}>{product.name}</p>
+      <div className={styles.cartItemDetails}>
+        <Link to={`/product/${product.id}`} className={styles.productLink}>
+          <h3 className={styles.cartItemName}>{product.name}</h3>
+        </Link>
 
-        <p className={styles["cart-item-price"]}>
-          <span>${(product.price * quantity).toFixed(2)}</span>
-          <span className={styles["cart-item-price-off"]}>
-            ${(product.price * quantity + 100).toFixed(2)}
-          </span>
-          <span className={styles["cart-item-price-discount"]}>
-            ${"30% off"}
-          </span>
-        </p>
+        <div className={styles.priceContainer}>
+          <span className={styles.originalPrice}>₹{originalPrice.toFixed(0)}</span>
+          <span className={styles.currentPrice}>₹{(product.price * quantity).toFixed(0)}</span>
+          <span className={styles.discount}>{discount}% OFF</span>
+        </div>
 
-        <div className={styles["cart-item-quantity"]}>
-          <button onClick={handleDecrease} className={styles["quantity-btn"]}>
-            <FaMinus />
-          </button>
-          <span className={styles["quantity-count"]}>{quantity}</span>
-          <button onClick={handleIncrease} className={styles["quantity-btn"]}>
-            <FaPlus />
-          </button>
+        <div className={styles.quantityContainer}>
+          <div className={styles.quantityControls}>
+            <button 
+              onClick={handleDecrease} 
+              className={styles.quantityBtn}
+              disabled={quantity <= 1}
+            >
+              <FaMinus size={14} />
+            </button>
+            <span className={styles.quantityCount}>{quantity}</span>
+            <button onClick={handleIncrease} className={styles.quantityBtn}>
+              <FaPlus size={14} />
+            </button>
+          </div>
+          <div className={styles.itemTotal}>
+            Total: ₹{(product.price * quantity).toFixed(0)}
+          </div>
         </div>
       </div>
 
-      <div className={styles["cart-item-remove"]}>
-        <button onClick={handleRemove} className={styles["remove-button"]}>
-          <MdClear size={20} />
+      <div className={styles.cartItemActions}>
+        <button 
+          onClick={handleRemove} 
+          className={styles.removeButton}
+          title="Remove item"
+        >
+          <MdDeleteOutline size={24} />
         </button>
       </div>
     </div>

@@ -1,34 +1,205 @@
-.cart-items-header {
+/* Material UI Inspired Cart Item List */
+.cartContainer {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+}
+
+.cartHeader {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 12px;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.cart-items-title{
-    font-size: larger;
+.cartTitleSection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cartTitle {
+    font-size: 1.75rem;
+    font-weight: 600;
     margin: 0;
+    color: #333;
 }
 
-.clear-cart-button{
+.itemCount {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.clearCartButton {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 8px;
+    padding: 12px 20px;
+    background: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Larger screens (tablet and above) */
-@media (min-width: 768px) {
-    .cart-items {
-        flex: 1;
-        margin-bottom: 0;
+.clearCartButton:hover {
+    background: #f44336;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Empty Cart State */
+.emptyCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.emptyCartIcon {
+    color: #e0e0e0;
+    margin-bottom: 24px;
+}
+
+.emptyCartTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 12px 0;
+}
+
+.emptyCartMessage {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 0 32px 0;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+.continueShoppingBtn {
+    background: #1976d2;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.3);
+}
+
+.continueShoppingBtn:hover {
+    background: #1565c0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.4);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .cartContainer {
+        padding: 16px;
+        margin-bottom: 16px;
     }
 
-    .cart-summary {
-        padding: 0 30px;
-        width: 30%;
-    }
-
-    .summary-details {
+    .cartHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
         margin-bottom: 20px;
+    }
+
+    .cartTitleSection {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .cartTitle {
+        font-size: 1.5rem;
+    }
+
+    .itemCount {
+        font-size: 0.9rem;
+    }
+
+    .clearCartButton {
+        align-self: flex-end;
+        padding: 10px 16px;
+        font-size: 0.8125rem;
+    }
+
+    .emptyCart {
+        padding: 40px 16px;
+    }
+
+    .emptyCartTitle {
+        font-size: 1.25rem;
+    }
+
+    .emptyCartMessage {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+    }
+
+    .continueShoppingBtn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cartContainer {
+        padding: 12px;
+    }
+
+    .cartTitle {
+        font-size: 1.25rem;
+    }
+
+    .clearCartButton {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+
+    .emptyCart {
+        padding: 32px 12px;
+    }
+
+    .emptyCartIcon {
+        margin-bottom: 16px;
+    }
+
+    .emptyCartTitle {
+        font-size: 1.125rem;
+    }
+
+    .emptyCartMessage {
+        font-size: 0.875rem;
+        margin-bottom: 20px;
+    }
+
+    .continueShoppingBtn {
+        padding: 8px 20px;
+        font-size: 0.875rem;
     }
 }

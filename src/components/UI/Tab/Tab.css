@@ -1,8 +1,8 @@
-/* Tab.css */
+/* Material UI Inspired Tab Styles */
 
 .tab-container {
     display: flex;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     flex-direction: column;
 }
 
@@ -11,45 +11,82 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    background: white;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
 }
 
 .tab-button {
-    padding: 16px;
+    padding: 16px 24px;
     margin: 0;
     border: none;
     background-color: transparent;
-    color: var(--text-color);
+    color: rgba(0, 0, 0, 0.6);
     cursor: pointer;
-    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 500;
     position: relative;
-    transition: color 0.3s ease, font-weight 0.3s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.02857em;
+    min-width: 90px;
+    text-align: center;
+    border-radius: 0;
 }
 
 .tab-button::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
-    width: 0;
+    left: 0;
+    right: 0;
     height: 2px;
-    background-color: var(--text-color);
-    transition: width 0.3s ease, left 0.3s ease;
-    transform: translateX(-50%);
+    background-color: #1976d2;
+    transform: scaleX(0);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
 }
 
 .tab-button.active {
-    color: var(--text-color);
-    background-color: var(--hover-color);
-    font-weight: bold;
+    color: #1976d2;
+    background-color: rgba(25, 118, 210, 0.04);
+    font-weight: 500;
 }
 
 .tab-button.active::after {
-    width: 100%;
-    left: 50%;
+    transform: scaleX(1);
 }
 
 .tab-button:hover {
-    background-color: var(--hover-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease;
+    background-color: rgba(25, 118, 210, 0.04);
+    color: #1976d2;
+}
+
+.tab-button:focus {
+    outline: none;
+    background-color: rgba(25, 118, 210, 0.08);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .tab-list {
+        flex-wrap: wrap;
+        border-radius: 0;
+    }
+    
+    .tab-button {
+        padding: 12px 16px;
+        font-size: 0.8125rem;
+        min-width: 80px;
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-button {
+        padding: 10px 12px;
+        font-size: 0.75rem;
+        min-width: 70px;
+    }
 }

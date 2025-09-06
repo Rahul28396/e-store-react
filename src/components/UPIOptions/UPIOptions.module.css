@@ -1,0 +1,399 @@
+/* Material UI Inspired UPI Options */
+.upiContainer {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.upiHeader {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.headerIcon {
+    font-size: 2rem;
+    color: #1976d2;
+    margin-bottom: 12px;
+}
+
+.upiHeader h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 8px 0;
+}
+
+.upiHeader p {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+}
+
+.upiApps {
+    margin-bottom: 32px;
+}
+
+.upiApps h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 16px 0;
+}
+
+.appsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+}
+
+.appItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.appItem:hover {
+    border-color: #1976d2;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.1);
+}
+
+.appIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: white;
+}
+
+.appName {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+}
+
+.upiForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.labelIcon {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.inputContainer {
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background: white;
+    transition: all 0.3s ease;
+    outline: none;
+    padding-right: 40px;
+}
+
+.input:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.input::placeholder {
+    color: #999;
+}
+
+.inputVerified {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.05);
+}
+
+.verifiedIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4caf50;
+    font-size: 1.125rem;
+}
+
+.helpText {
+    font-size: 0.75rem;
+    color: #666;
+    margin: 0;
+}
+
+.verifyButton {
+    background: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.verifyButton:hover:not(:disabled) {
+    background: #f57c00;
+    transform: translateY(-1px);
+}
+
+.verifyButton:disabled {
+    background: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.qrOption {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.qrHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.qrIcon {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.qrPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    background: white;
+    border-radius: 8px;
+    border: 2px dashed rgba(0, 0, 0, 0.23);
+    text-align: center;
+}
+
+.qrPlaceholderIcon {
+    font-size: 2rem;
+    color: #ccc;
+    margin-bottom: 8px;
+}
+
+.qrPlaceholder p {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+}
+
+.payButton {
+    background: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+}
+
+.payButton:hover:not(:disabled) {
+    background: #1565c0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.4);
+}
+
+.payButton:disabled {
+    background: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.buttonIcon {
+    font-size: 0.875rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .upiContainer {
+        max-width: 100%;
+    }
+
+    .upiHeader {
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+    }
+
+    .headerIcon {
+        font-size: 1.75rem;
+        margin-bottom: 8px;
+    }
+
+    .upiHeader h3 {
+        font-size: 1.25rem;
+    }
+
+    .upiHeader p {
+        font-size: 0.8125rem;
+    }
+
+    .appsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .appItem {
+        padding: 12px 8px;
+    }
+
+    .appIcon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .appName {
+        font-size: 0.6875rem;
+    }
+
+    .upiForm {
+        gap: 16px;
+    }
+
+    .input {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        padding-right: 36px;
+    }
+
+    .verifiedIcon {
+        right: 10px;
+        font-size: 1rem;
+    }
+
+    .verifyButton {
+        padding: 10px 16px;
+        font-size: 0.8125rem;
+    }
+
+    .qrPlaceholder {
+        padding: 24px;
+    }
+
+    .qrPlaceholderIcon {
+        font-size: 1.5rem;
+    }
+
+    .payButton {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .upiHeader {
+        margin-bottom: 20px;
+    }
+
+    .headerIcon {
+        font-size: 1.5rem;
+    }
+
+    .upiHeader h3 {
+        font-size: 1.125rem;
+    }
+
+    .appsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .appItem {
+        padding: 10px 6px;
+    }
+
+    .appIcon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.875rem;
+    }
+
+    .appName {
+        font-size: 0.625rem;
+    }
+
+    .upiForm {
+        gap: 14px;
+    }
+
+    .input {
+        padding: 8px 10px;
+        font-size: 0.875rem;
+        padding-right: 32px;
+    }
+
+    .verifyButton {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+
+    .qrPlaceholder {
+        padding: 20px;
+    }
+
+    .payButton {
+        padding: 12px 16px;
+        font-size: 0.875rem;
+    }
+}
+

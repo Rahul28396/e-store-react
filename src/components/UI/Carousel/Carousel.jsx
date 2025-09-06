@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./Carousel.css";
 
 const Carousel = ({ images = [], autoSlide = true, slideInterval = 5000 }) => {
@@ -71,6 +72,15 @@ const Carousel = ({ images = [], autoSlide = true, slideInterval = 5000 }) => {
         {images.map((src, index) => (
           <div className="carousel-slide" key={index}>
             <img src={src} alt={`Slide ${index}`} />
+            <div className="carousel-overlay">
+              <div className="carousel-content">
+                <h1>Welcome to E-Store</h1>
+                <p>Discover amazing products at unbeatable prices. Shop the latest trends and find everything you need in one place.</p>
+                <button className="carousel-cta" onClick={() => console.log("Shop Now clicked")}>
+                  Shop Now
+                </button>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -78,11 +88,11 @@ const Carousel = ({ images = [], autoSlide = true, slideInterval = 5000 }) => {
       {/* Prev / Next buttons only for desktop */}
       {!isMobile && (
         <>
-          <button className="nav-button prev" onClick={prevSlide}>
-            ‹
+          <button className="nav-button prev" onClick={prevSlide} aria-label="Previous slide">
+            <FaChevronLeft />
           </button>
-          <button className="nav-button next" onClick={nextSlide}>
-            ›
+          <button className="nav-button next" onClick={nextSlide} aria-label="Next slide">
+            <FaChevronRight />
           </button>
         </>
       )}

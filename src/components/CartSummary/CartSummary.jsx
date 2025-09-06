@@ -1,14 +1,15 @@
 import { useLocation, useNavigate } from "react-router";
 import styles from './CartSummary.module.css';
 import { useEffect, useState } from "react";
+import { FaTag, FaArrowRight } from "react-icons/fa";
 
 const CartSummary = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const [ next, setNext ] = useState('address')
+  const [next, setNext] = useState('address');
+  const [promoCode, setPromoCode] = useState('');
 
-  useEffect(()=> {
-    console.log(pathname)
+  useEffect(() => {
     switch (pathname) {
       case "/checkout/address":
         setNext("payment");
@@ -20,57 +21,76 @@ const CartSummary = () => {
         setNext('address');
         break;
     }
-  }, [pathname])
+  }, [pathname]);
+
+  const handlePromoCodeChange = (e) => {
+    setPromoCode(e.target.value);
+  };
+
+  const applyPromoCode = () => {
+    console.log("Apply promo code:", promoCode);
+  };
+
+  const orderSummary = [
+    { label: "Total MRP", value: "₹1,84,888", type: "regular" },
+    { label: "Discount on MRP", value: "-₹18,489", type: "discount" },
+    { label: "Coupon Discount", value: "-₹5,000", type: "discount" },
+    { label: "Platform Fee", value: "₹2,000", type: "regular" },
+    { label: "Shipping Fee", value: "₹3,000", type: "regular" },
+    { label: "Total Amount", value: "₹1,66,399", type: "total" },
+  ];
 
   return (
-    <div className={styles["cart-summary"]}>
-      <h4 className={styles["cart-summary-header"]}>Price Details (3 Items)</h4>
-      <div className={styles["promo"]}>
-        <label className={styles["cart-summary-label"]} htmlFor="promo-code">
-          Promo Code:
-        </label>
-        <input
-          className={styles["cart-summary-input"]}
-          type="text"
-          id="promo-code"
-          placeholder="Enter promo code"
-        />
+    <div className={styles.cartSummary}>
+      <div className={styles.summaryHeader}>
+        <h3 className={styles.summaryTitle}>Price Details</h3>
+        <span className={styles.itemCount}>(4 items)</span>
       </div>
-      <div className={styles["order-summary"]}>
-        <p className={`${styles["order-summary-item"]} font-bold`}>
-          <span>Total MRP:</span>
-          <span>$100.00</span>
-        </p>
-        <p className={styles["order-summary-item"]}>
-          <span>Tax:</span>
-          <span>$0.00</span>
-        </p>
-        <p className={styles["order-summary-item"]}>
-          <span>Discount on MRP:</span>
-          <span>$25.00</span>
-        </p>
-        <p className={styles["order-summary-item"]}>
-          <span>Coupon Discount:</span>
-          <span>$10.00</span>
-        </p>
-        <p className={`${styles["order-summary-item"]}`}>
-          <span>Platform Fee:</span>
-          <span>$2.00</span>
-        </p>
-        <p className={`${styles["order-summary-item"]}`}>
-          <span>Shipping Fee:</span>
-          <span>$3.00</span>
-        </p>
-        <p className={`${styles["order-summary-item"]} font-bold`}>
-          <span>Total amount:</span>
-          <span>$60.00</span>
-        </p>
+
+      <div className={styles.promoSection}>
+        <div className={styles.promoInputContainer}>
+          <FaTag className={styles.promoIcon} />
+          <input
+            className={styles.promoInput}
+            type="text"
+            placeholder="Enter promo code"
+            value={promoCode}
+            onChange={handlePromoCodeChange}
+          />
+          <button 
+            className={styles.applyButton}
+            onClick={applyPromoCode}
+            disabled={!promoCode.trim()}
+          >
+            Apply
+          </button>
+        </div>
       </div>
+
+      <div className={styles.orderSummary}>
+        {orderSummary.map((item, index) => (
+          <div 
+            key={index} 
+            className={`${styles.summaryItem} ${item.type === 'total' ? styles.totalItem : ''}`}
+          >
+            <span className={styles.itemLabel}>{item.label}</span>
+            <span className={`${styles.itemValue} ${item.type === 'discount' ? styles.discountValue : ''}`}>
+              {item.value}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div className={styles.savingsInfo}>
+        <span className={styles.savingsText}>You save ₹23,489 on this order</span>
+      </div>
+
       <button
-        className={styles["checkout-button"]}
+        className={styles.checkoutButton}
         onClick={() => navigate(next)}
       >
-        Checkout
+        <span>{pathname === "/checkout/payment" ? "Place Order" : "Proceed to Checkout"}</span>
+        <FaArrowRight className={styles.buttonIcon} />
       </button>
     </div>
   );

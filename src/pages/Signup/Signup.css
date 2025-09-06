@@ -103,6 +103,10 @@
     background: #1d4ed8;
 }
 
+.signup-btn:disabled{
+    background: #a5b4fc;
+}
+
 .signup-footer {
     margin-top: 1.5rem;
     font-size: 0.95rem;
@@ -117,4 +121,9 @@
 
 .signup-link:hover {
     text-decoration: underline;
+}
+
+.signup-error{
+    color: rgb(218, 18, 18);
+    margin: 2px 0 0 0;
 }
